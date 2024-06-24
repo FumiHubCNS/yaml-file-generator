@@ -366,17 +366,21 @@ function startConnection(e) {
 }
 
 function drawConnections() {
-    const scrollX = window.scrollX; // 横スクロールの量を取得
-    const scrollY = window.scrollY; // 縦スクロールの量を取得
+    if (!showLines) {
+        return;
+    }
+    
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     connections.forEach(connection => {
         const startRect = connection.start.getBoundingClientRect();
         const endRect = connection.end.getBoundingClientRect();
-        const startX = startRect.left + startRect.width / 2 - container.offsetLeft + scrollX;
-        const startY = startRect.top + startRect.height / 2 - container.offsetTop + scrollY;
-        const endX = endRect.left + endRect.width / 2 - container.offsetLeft + scrollX;
-        const endY = endRect.top + endRect.height / 2 - container.offsetTop + scrollY;
+        const startX = startRect.left + startRect.width / 2 - container.offsetLeft + scrollX + container.scrollLeft;
+        const startY = startRect.top + startRect.height / 2 - container.offsetTop + scrollY + container.scrollTop;
+        const endX = endRect.left + endRect.width / 2 - container.offsetLeft + scrollX + container.scrollLeft;
+        const endY = endRect.top + endRect.height / 2 - container.offsetTop + scrollY + container.scrollTop;
 
         ctx.beginPath();
         ctx.moveTo(startX, startY);
@@ -453,6 +457,29 @@ function searchAndShowResults() {
     }
 }
 
+function updateCanvasSize() {
+    let maxWidth = canvas.clientWidth;
+    let maxHeight = canvas.clientHeight;
+
+    blocks.forEach(block => {
+        const rightEdge = block.offsetLeft + block.offsetWidth;
+        const bottomEdge = block.offsetTop + block.offsetHeight;
+
+        if (rightEdge > maxWidth) {
+            maxWidth = rightEdge;
+        }
+        if (bottomEdge > maxHeight) {
+            maxHeight = bottomEdge;
+        }
+    });
+
+    // キャンバスのサイズを更新
+    canvas.width = maxWidth;
+    canvas.height = maxHeight;
+
+    drawConnections(); // キャンバスの線を再描画
+}
+
 function setupDrag(block) {
     block.addEventListener('mousedown', (e) => {
         if (e.target.className.includes('block') || e.target.tagName === 'STRONG') {
@@ -476,10 +503,30 @@ function setupDrag(block) {
         if (isDragging) {
             const deltaX = e.clientX - offsetX;
             const deltaY = e.clientY - offsetY;
+
             selectedBlocks.forEach(block => {
                 block.style.left = `${deltaX}px`;
                 block.style.top = `${deltaY}px`;
+                
+                // コンテナのスクロール処理
+                const blockRect = block.getBoundingClientRect();
+                const containerRect = container.getBoundingClientRect();
+                const scrollMargin = 20; // スクロールを開始する境界からの距離
+
+                if (blockRect.right > containerRect.right - scrollMargin) {
+                    container.scrollLeft += 10;
+                } else if (blockRect.left < containerRect.left + scrollMargin) {
+                    container.scrollLeft -= 10;
+                }
+
+                if (blockRect.bottom > containerRect.bottom - scrollMargin) {
+                    container.scrollTop += 10;
+                } else if (blockRect.top < containerRect.top + scrollMargin) {
+                    container.scrollTop -= 10;
+                }
             });
+
+            updateCanvasSize();
             drawConnections();
         }
     });
@@ -495,18 +542,3 @@ function setupDrag(block) {
         }
     });
 }
-
-
-function adjustCanvasSize() {
-    const container = document.getElementById('container');
-    const canvas = document.getElementById('canvas');
-
-    // Set the canvas and container size to match the browser window
-    container.style.width = window.innerWidth + 'px';
-    container.style.height = window.innerHeight + 'px';
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-
-
-

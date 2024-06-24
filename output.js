@@ -48,7 +48,7 @@ function saveAsPNG() {
         width: container.scrollWidth,
         height: container.scrollHeight,
         backgroundColor: null // 背景を透明にする
-    }).then(canvas => {
+    }).then(containerCanvas => {
         // 元のスタイルを戻す
         container.style.backgroundColor = originalContainerStyle.backgroundColor;
         container.style.border = originalContainerStyle.border;
@@ -70,13 +70,27 @@ function saveAsPNG() {
             });
         });
 
+        // `canvas` の位置とサイズを取得
+        const canvasRect = canvas.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+        const offsetX = canvasRect.left - containerRect.left;
+        const offsetY = canvasRect.top - containerRect.top;
+        
+        // `canvas` の部分だけを切り取る
+        const canvasImage = document.createElement('canvas');
+        canvasImage.width = canvasRect.width;
+        canvasImage.height = canvasRect.height;
+        const ctx = canvasImage.getContext('2d');
+        ctx.drawImage(containerCanvas, offsetX, offsetY, canvasRect.width, canvasRect.height, 0, 0, canvasRect.width, canvasRect.height);
+
         // PNGを保存
         const link = document.createElement('a');
-        link.href = canvas.toDataURL('image/png');
+        link.href = canvasImage.toDataURL('image/png');
         link.download = 'diagram.png';
         link.click();
     });
 }
+
 
 function saveAsJSON() {
     const data = {

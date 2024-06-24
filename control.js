@@ -54,6 +54,16 @@ document.getElementById('loadData').addEventListener('change', loadFromJSON);
 document.getElementById('addJsonButton').addEventListener('click', () => {document.getElementById('addJsonInput').click();});
 document.getElementById('addJsonInput').addEventListener('change', addFromJSON);
 
+document.getElementById('hideLinesButton').addEventListener('click', () => {
+    showLines = !showLines;
+    if (showLines) {
+        drawConnections(); // 線を再表示
+    } else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // 線を非表示
+    }
+});
+
+
 document.getElementById('generateYaml').addEventListener('click', () => {
     const yamlFilesContent = generateYAMLFiles();
     showYAMLFilesPopup(yamlFilesContent);
@@ -70,3 +80,5 @@ document.getElementById('downloadYaml').addEventListener('click', () => {
 });
 
 window.addEventListener('scroll', drawConnections);
+
+

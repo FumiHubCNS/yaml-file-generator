@@ -17,3 +17,4 @@ let connections = [];
 let globalIdCounter = 0;
 let groupCounter = 1;
 let groupParameters = {};
+let showLines = true;

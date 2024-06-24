@@ -15,7 +15,14 @@ body {
     height: 850px;
     border: 1px solid #ddd;
     background-color: #f9f9f9;
-    overflow: hidden;
+    overflow: scroll;
+}
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transform-origin: center; 
 }
 .block {
     width: 200px; /* ブロックの幅 */
@@ -51,12 +58,6 @@ body {
     color: rgb(0, 0, 139); /* 0%透過のダークブルー */
     position: absolute;
     transform: translateY(-50%);
-}
-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
 }
 .popup {
     position: absolute;
