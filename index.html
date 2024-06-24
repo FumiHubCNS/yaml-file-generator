@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAML File Generator</title>
+    <!-- 外部CSSファイルを読み込む -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>YAML file generator</h1>
+
+    <h2 id="anchorInfoSection">Anchor</h2>
+
+    <div id="listContainer"></div>
+    <button id="addButton">Add</button>
+
+    <h2 id="groupInfoSection">Group Information</h2>
+    <div id="groupInfoContainer">
+        <table id="groupInfoTable">
+            <thead>
+                <tr>
+                    <th>Group Color</th>
+                    <th>Group ID</th>
+                    <th>Group Label</th>
+                    <th colspan="3">Actions</th>
+                    <th>Paramters</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <h2 id="processorInfoSection">Processor</h2>
+
+    <div id="controls">
+        <input type="text" id="searchText" placeholder="Enter search term" />
+        <button id="searchData">Search</button>        
+        <select id="inputSelect"></select>
+        <button id="addBlock">Add Block</button>
+        <button id="groupBlocks">Group Blocks</button>
+        <button id="clearAll">Clear All</button>
+        <button id="saveImage">Save as PNG</button>
+        <button id="saveData">Save as JSON</button>
+        <input type="file" id="loadData" style="display: none;" />
+        <button id="loadDataButton">Load JSON</button>
+        <input type="file" id="addJsonInput" style="display: none;" />
+        <button id="addJsonButton">Add JSON</button>
+        <button id="generateYaml">Generate YAML</button>
+        <button id="downloadYaml">Download YAML</button>
+    </div>
+
+    <div id="container" style="overflow: auto;">
+        <canvas id="canvas" width="1600px" height="850px"></canvas>
+    </div>    
+
+    <!-- 外部JavaScriptファイルを読み込む -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.3/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    
+    <script src="global_variable.js"></script>
+    <script src="popup.js"></script>
+    <script src="canvas.js"></script>
+    <script src="output.js"></script>
+    <script src="anchor.js"></script>
+    <script src="group.js"></script>
+    <script src="control.js"></script>
+    
+    <script>
+
+        function populateInputSelect() {
+            inputs.forEach((input, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = input.title;
+                inputSelect.appendChild(option);
+            });
+        }
+
+        axios.get('proc.json')
+        .then(response => {
+            inputs = response.data.inputs;
+            populateInputSelect();
+        })
+        .catch(error => console.error('Error loading JSON:', error));
+    </script>
+
+</body>
+</html>

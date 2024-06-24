@@ -1,0 +1,5769 @@
+{
+    "inputs": [
+        {
+            "title": "art::TAffineConverterArrayGenerator",
+            "parameters": [
+                "OutputTransparency",
+                "ParameterList",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "[affine_conversion,path/to/infile]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TAffineConverterCombinator",
+            "parameters": [
+                "NameOutput",
+                "OutputTransparency",
+                "ParameterList",
+                "Verbose"
+            ],
+            "values": [
+                "conv",
+                "0",
+                "[affine_conversion,path/to/infile]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TAffineConverterConditionProcessor",
+            "parameters": [
+                "NameEventHeader",
+                "OutputTransparency",
+                "ParameterList",
+                "TypeOfTimestamp",
+                "Verbose"
+            ],
+            "values": [
+                "eventheader",
+                "0",
+                "[affine_conversion,path/to/infile]",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TAsynchronousRunEndProcessor",
+            "parameters": [
+                "OutputTransparency",
+                "RunStatusNames",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "[]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TBetaDecomposeProcessor",
+            "parameters": [
+                "InputNameBrho1",
+                "InputNameBrho2",
+                "InputNameTOF",
+                "Length1",
+                "Length2",
+                "OutputNameBeta1",
+                "OutputNameBeta2",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "brho35",
+                "brho57",
+                "tof37",
+                "23.283199310302734",
+                "23.283199310302734",
+                "beta35",
+                "beta57",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TProcessor",
+            "parameters": [
+                "AngDistFile",
+                "AngMom",
+                "AngRange",
+                "DoRandomizePhi",
+                "ExMean",
+                "ExRange",
+                "ExWidth",
+                "KinMean",
+                "MCTruthCollection",
+                "MaxLoop",
+                "OutputCollection",
+                "OutputTransparency",
+                "Particle1",
+                "Particle2",
+                "Particle3",
+                "RunName",
+                "RunNumber",
+                "Verbose"
+            ],
+            "values": [
+                "\"\"",
+                "-1",
+                "[0,10]",
+                "1",
+                "15",
+                "[0,30]",
+                "0",
+                "100",
+                "mctruth",
+                "1000000",
+                "recoil",
+                "0",
+                "[1,1]",
+                "[1,1]",
+                "[1,1]",
+                "sim",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TBrhoReconstructProcessor",
+            "parameters": [
+                "Brho0",
+                "InputName1",
+                "InputName2",
+                "Mode",
+                "OutputName",
+                "OutputTransparency",
+                "Section",
+                "Verbose",
+                "Z"
+            ],
+            "values": [
+                "0",
+                "f3",
+                "f5",
+                "0",
+                "brho35",
+                "0",
+                "35",
+                "1",
+                "0"
+            ]
+        },
+        {
+            "title": "art::TCatAtBeamInRecoilRegionCounter",
+            "parameters": [
+                "DebugMode",
+                "DetailDebugMode",
+                "ExcludeEvtSaveMode",
+                "HistSaveFlag",
+                "InputCollection",
+                "LogFileName",
+                "LogFilePath",
+                "OutputCollection",
+                "OutputExcludeEvtCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "[atrecoilcls]",
+                "beaminrecoilregioncounter.log",
+                "../log",
+                "atrecoilcls2",
+                "atexcludeevt3",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatAtClusteringProcessor",
+            "parameters": [
+                "AddFigFilePath",
+                "CanvasH",
+                "CanvasW",
+                "CanvasX",
+                "CanvasY",
+                "DebugMode",
+                "DetailDebugMode",
+                "DrawPulseFlag",
+                "EventHeader",
+                "ExcludeEvtSaveMode",
+                "FigFilePath",
+                "HistSaveFlag",
+                "InputCollection",
+                "LogFileName",
+                "LogFilePath",
+                "MinNHits",
+                "OutputBeamCollection",
+                "OutputCollection",
+                "OutputExcludeEvtCollection",
+                "OutputTransparency",
+                "RunHeadersName",
+                "SaveEvtNum",
+                "SaveFigFlag",
+                "SavePulse",
+                "SetCutHits",
+                "UseAllCluster",
+                "Verbose",
+                "WaitTime"
+            ],
+            "values": [
+                "./",
+                "1050",
+                "1000",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "eventheader",
+                "0",
+                "./",
+                "0",
+                "[atevt]",
+                "clusterproc.log",
+                "../log",
+                "0",
+                "atevtselbeam",
+                "atcls",
+                "atexcludeevt2",
+                "0",
+                "runheader",
+                "-1",
+                "0",
+                "0",
+                "3",
+                "0",
+                "1",
+                "200000"
+            ]
+        },
+        {
+            "title": "art::TCatAtEventSelectionByRecoilHitPattern",
+            "parameters": [
+                "DebugMode",
+                "DetailDebugMode",
+                "ExcludeEvtSaveMode",
+                "HistSaveFlag",
+                "InputCollection",
+                "LogFileName",
+                "LogFilePath",
+                "MinNHits",
+                "OutputCollection",
+                "OutputExcludeEvtCollection",
+                "OutputExcludeLessEvtCollection",
+                "OutputExcludeMoreEvtCollection",
+                "OutputTransparency",
+                "SetNColRecoilRange",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "[athitcls]",
+                "evtsel.log",
+                "../log",
+                "0",
+                "atevt",
+                "atexcludeevt",
+                "atexcludelessevt",
+                "atexcludemoreevt",
+                "0",
+                "2",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatAtHitPatternProcessor",
+            "parameters": [
+                "EventHeader",
+                "HistName",
+                "InputCollection",
+                "OutputTransparency",
+                "ReadoutPad",
+                "Verbose",
+                "WaitTime",
+                "WidthDX",
+                "WidthDY"
+            ],
+            "values": [
+                "eventheader",
+                "hHitPattern",
+                "[atraw]",
+                "0",
+                "readoutPad",
+                "1",
+                "200000",
+                "50",
+                "50"
+            ]
+        },
+        {
+            "title": "art::TCatAtMappingProcessor",
+            "parameters": [
+                "BeamRegion",
+                "CatID",
+                "InputCollection",
+                "MaxDetID",
+                "OutputCollection",
+                "OutputTransparency",
+                "ReadoutPad",
+                "SelectIf",
+                "Verbose"
+            ],
+            "values": [
+                "[-18,18]",
+                "1",
+                "[catdata]",
+                "415",
+                "at",
+                "0",
+                "readoutPad",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatAtPedestalCalculator",
+            "parameters": [
+                "InputCollection",
+                "MaxGeo",
+                "OutputRootFile",
+                "OutputTextFile",
+                "OutputTransparency",
+                "SegID",
+                "Verbose"
+            ],
+            "values": [
+                "[segdata]",
+                "7",
+                "root/pedestal.root",
+                "output/pedestal.txt",
+                "0",
+                "[0,0,0]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatAtPedestalProcessor",
+            "parameters": [
+                "HistName",
+                "InputCollection",
+                "MaxGeo",
+                "MaxID",
+                "OutputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "hCatPed",
+                "[atraw]",
+                "6",
+                "400",
+                "no_output",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatAtPedestalSubtractTester",
+            "parameters": [
+                "AddFigFilePath",
+                "CanvasH",
+                "CanvasW",
+                "CanvasX",
+                "CanvasY",
+                "CutSigma",
+                "DebugMode",
+                "DetailDebugMode",
+                "DrawFigFlag",
+                "FigFilePath",
+                "HighSigma",
+                "HistSaveFlag",
+                "InputCollection",
+                "LogFileName",
+                "LogFilePath",
+                "LowSigma",
+                "OutputCollection",
+                "OutputInvalid",
+                "OutputSigmaCollection",
+                "OutputTransparency",
+                "RunHeadersName",
+                "SaveEvtNum",
+                "SaveFigFlag",
+                "SaveHitNum",
+                "Verbose",
+                "ViewID",
+                "WaitTime"
+            ],
+            "values": [
+                "./",
+                "1050",
+                "1000",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "./",
+                "1000000000",
+                "0",
+                "[atraw]",
+                "pedsubtester.log",
+                "../log",
+                "-1000000000",
+                "atrawsub",
+                "0",
+                "sigma",
+                "0",
+                "runheader",
+                "-1",
+                "0",
+                "-1",
+                "1",
+                "-1",
+                "200000"
+            ]
+        },
+        {
+            "title": "art::TCatAtPedestalSubtractionProcessor",
+            "parameters": [
+                "DoInvertPulse",
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "[atraw]",
+                "atrawsub",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatAtRoughEventCounter",
+            "parameters": [
+                "AddFigFilePath",
+                "BeamAtomicMass",
+                "BeamMass",
+                "BeamVelocity",
+                "CanvasH",
+                "CanvasW",
+                "CanvasX",
+                "CanvasY",
+                "DebugMode",
+                "DetailDebugMode",
+                "DrawFigFlag",
+                "DrawPulseFlag",
+                "DriftVelocity",
+                "EventHeader",
+                "FigFilePath",
+                "HistName",
+                "HistSaveFlag",
+                "IgnoreDistanceToBeam",
+                "InputCollection",
+                "LeastSquareMode",
+                "LogFileName",
+                "LogFilePath",
+                "LowPressure",
+                "NoColorFigFlag",
+                "OutputCollection",
+                "OutputTransparency",
+                "ReadoutPad",
+                "RunHeadersName",
+                "SaveEvtNum",
+                "SaveFigFlag",
+                "SelectCondition",
+                "SetCutRecoilHits",
+                "SetHiThresAngle",
+                "SetLowThresAngle",
+                "SetRecoilRange",
+                "ShowBeamMode",
+                "ShowRecoilMode",
+                "UseAllRecoilCluster",
+                "Verbose",
+                "WaitTime"
+            ],
+            "values": [
+                "./",
+                "15.003066062927246",
+                "13971.287109375",
+                "100",
+                "1050",
+                "1000",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1",
+                "eventheader",
+                "./",
+                "atroughevt",
+                "0",
+                "0",
+                "[athitcls]",
+                "1",
+                "roughevtcounter.log",
+                "../log",
+                "1",
+                "0",
+                "atroughevt",
+                "0",
+                "readoutPad",
+                "runheader",
+                "-1",
+                "0",
+                "0",
+                "3",
+                "180",
+                "0",
+                "20",
+                "0",
+                "0",
+                "0",
+                "1",
+                "200000"
+            ]
+        },
+        {
+            "title": "art::TCatAtSaveChargePatternProcessor",
+            "parameters": [
+                "AddFigFilePath",
+                "CanvasH",
+                "CanvasW",
+                "CanvasX",
+                "CanvasY",
+                "DebugMode",
+                "DetailDebugMode",
+                "FigFilePath",
+                "FillClsFlag",
+                "InputCollection",
+                "LogFileName",
+                "LogFilePath",
+                "NoColorFigFlag",
+                "OutputTransparency",
+                "ReadoutPad",
+                "RunHeadersName",
+                "SaveEvtNum",
+                "SaveFigFlag",
+                "Verbose",
+                "WaitTime"
+            ],
+            "values": [
+                "./",
+                "670",
+                "650",
+                "0",
+                "0",
+                "0",
+                "0",
+                "./",
+                "0",
+                "[atraw]",
+                "savehitpatternproc.log",
+                "../log",
+                "0",
+                "0",
+                "readoutPad",
+                "runheader",
+                "-1",
+                "0",
+                "1",
+                "200000"
+            ]
+        },
+        {
+            "title": "art::TCatAtSaveHitPatternProcessor",
+            "parameters": [
+                "AddFigFilePath",
+                "CanvasH",
+                "CanvasW",
+                "CanvasX",
+                "CanvasY",
+                "DebugMode",
+                "DetailDebugMode",
+                "EventHeader",
+                "FigFilePath",
+                "FillClsFlag",
+                "InputCollection",
+                "LogFileName",
+                "LogFilePath",
+                "NoColorFigFlag",
+                "OutputTransparency",
+                "RunHeadersName",
+                "SaveEvtNum",
+                "SaveFigFlag",
+                "Verbose",
+                "WaitTime"
+            ],
+            "values": [
+                "./",
+                "670",
+                "650",
+                "0",
+                "0",
+                "0",
+                "0",
+                "eventheader",
+                "./",
+                "0",
+                "[atraw]",
+                "savehitpatternproc.log",
+                "../log",
+                "0",
+                "0",
+                "runheader",
+                "-1",
+                "0",
+                "1",
+                "200000"
+            ]
+        },
+        {
+            "title": "art::TCatAtSaveMaxSamplePatternProcessor",
+            "parameters": [
+                "AddFigFilePath",
+                "CanvasH",
+                "CanvasW",
+                "CanvasX",
+                "CanvasY",
+                "DebugMode",
+                "DetailDebugMode",
+                "EventHeader",
+                "FigFilePath",
+                "FillClsFlag",
+                "InputCollection",
+                "LogFileName",
+                "LogFilePath",
+                "NoColorFigFlag",
+                "OutputTransparency",
+                "ReadoutPad",
+                "RunHeadersName",
+                "SaveEvtNum",
+                "SaveFigFlag",
+                "Verbose",
+                "WaitTime"
+            ],
+            "values": [
+                "./",
+                "670",
+                "650",
+                "0",
+                "0",
+                "0",
+                "0",
+                "eventheader",
+                "./",
+                "0",
+                "[atraw]",
+                "savehitpatternproc.log",
+                "../log",
+                "0",
+                "0",
+                "readoutPad",
+                "runheader",
+                "-1",
+                "0",
+                "1",
+                "200000"
+            ]
+        },
+        {
+            "title": "art::TCatAtSiHitPatternProcessor",
+            "parameters": [
+                "HistName",
+                "InputCollectionAt",
+                "InputCollectionSi",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "hHitPattern",
+                "[atraw]",
+                "[siraw]",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatAtSpillCounter",
+            "parameters": [
+                "CatID",
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "2",
+                "[categorized]",
+                "atspill",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatBeamHitsFinderWithRecoil",
+            "parameters": [
+                "Input",
+                "MaxDistance",
+                "Output",
+                "OutputTransparency",
+                "Recoil",
+                "Verbose"
+            ],
+            "values": [
+                "atbeamhits",
+                "10",
+                "atbeamhits",
+                "0",
+                "atrecoil",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatBeamTrackSimulator",
+            "parameters": [
+                "EndPoint",
+                "Output",
+                "OutputTransparency",
+                "StartPoint",
+                "Verbose"
+            ],
+            "values": [
+                "[0,0,0]",
+                "aTrack",
+                "0",
+                "[0,0,0]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatBeamXProcessor",
+            "parameters": [
+                "DebugMode",
+                "DetailDebugMode",
+                "InputCollection",
+                "LogFileName",
+                "LogFilePath",
+                "OutputP0Collection",
+                "OutputP1Collection",
+                "OutputTransparency",
+                "RunHeadersName",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "0",
+                "[atroughbeam]",
+                "beamxproc.log",
+                "../log",
+                "beamxzp0",
+                "beamxzp1",
+                "0",
+                "runheader",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatClusterSumProcessor",
+            "parameters": [
+                "AxisType",
+                "Input",
+                "Output",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "atcluster",
+                "atclustersum",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatDiffSampleProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Sparse",
+                "Verbose"
+            ],
+            "values": [
+                "[atrawsub]",
+                "atpulse",
+                "0",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatEvalGainShiftProcessor",
+            "parameters": [
+                "ChargeRange",
+                "ChargeThreshold",
+                "CorrectionFile",
+                "CountRatioThreshold",
+                "CountThreshold",
+                "DeviationThreshold",
+                "EventHeader",
+                "EventsModulus",
+                "InputFile",
+                "InputTrack",
+                "OutputFile",
+                "OutputTransparency",
+                "ReadoutPad",
+                "Verbose"
+            ],
+            "values": [
+                "[0,0,0]",
+                "1000",
+                "path/to/correction.dat",
+                "0.10000000000000001",
+                "100",
+                "5",
+                "eventheader",
+                "1000",
+                "path/to/input.tree.root",
+                "atcluster",
+                "path/to/output.hist.root",
+                "0",
+                "readoutPad",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatEvalTpcChargeResolution",
+            "parameters": [
+                "DoUseHits",
+                "Input",
+                "OutputFile",
+                "OutputTransparency",
+                "ReadoutPadArray",
+                "Verbose",
+                "Xaxis",
+                "Yaxis"
+            ],
+            "values": [
+                "0",
+                "resTrack",
+                "temp.root",
+                "0",
+                "readoutPad",
+                "1",
+                "[100,0,0.10000000000000001]",
+                "[100,0,2]"
+            ]
+        },
+        {
+            "title": "art::TCatGainEvaluationProcessor",
+            "parameters": [
+                "IdMax",
+                "IdMin",
+                "Input",
+                "OffsetMax",
+                "OffsetMin",
+                "Output",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "415",
+                "0",
+                "atpulse",
+                "50",
+                "-200",
+                "athitsrow",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatGausSampleProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Sigma",
+                "Sparse",
+                "Verbose"
+            ],
+            "values": [
+                "[atrawsub]",
+                "atpulse",
+                "0",
+                "1",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatHitFinderByCharge",
+            "parameters": [
+                "ChargeThreshold",
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "30",
+                "atsub",
+                "athit",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatMissingMassProcessor",
+            "parameters": [
+                "AtomicNumber",
+                "BeamEnergy",
+                "BeamInput",
+                "Ex",
+                "MassNumber",
+                "OutputTransparency",
+                "RangeTable",
+                "RecoilInput",
+                "RecoilOutput",
+                "ThetaCM",
+                "Verbose"
+            ],
+            "values": [
+                "50",
+                "114",
+                "beamTrack",
+                "Ex",
+                "132",
+                "0",
+                "rangeTable",
+                "recoilTrack",
+                "recoilMom",
+                "ThetaCM",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatPulseBitCorrectionProcessor",
+            "parameters": [
+                "InputCollection",
+                "MaxADC",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "[at]",
+                "2800",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatReadoutPadConditionProcessor",
+            "parameters": [
+                "Bads",
+                "Gap",
+                "LowGains",
+                "OutputName",
+                "OutputTransparency",
+                "Type",
+                "Verbose"
+            ],
+            "values": [
+                "[]",
+                "0.14999999999999999",
+                "[]",
+                "readoutPad",
+                "0",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatRecoilEventGenerator",
+            "parameters": [
+                "ActiveArea",
+                "BeamRegion",
+                "ChargeThreshold",
+                "DefaultIntegrateStep",
+                "DirNameFmt",
+                "DisplacementTableXName",
+                "DisplacementTableZName",
+                "DisplayMode",
+                "EventHeader",
+                "EventHeaderName",
+                "FileNameFmt",
+                "Input",
+                "Output",
+                "OutputTrackResult",
+                "OutputTrackResultFolded",
+                "OutputTransparency",
+                "PhiRange",
+                "RangeTable",
+                "ReadoutPad",
+                "ReadoutPlaneOffset",
+                "ResponseTableName",
+                "RunHeadersName",
+                "SigmaCoeff",
+                "TpcGasProp",
+                "UseDisplacement3D",
+                "Verbose",
+                "WaitTime",
+                "Zrange"
+            ],
+            "values": [
+                "[0,0,0,0,0,0]",
+                "[0,0]",
+                "0.01",
+                "1",
+                "figs/%s",
+                "\"\"",
+                "\"\"",
+                "0",
+                "eventheader",
+                "eventheader",
+                "\"%s%04d_%05d.png\"",
+                "recoil",
+                "mcpulse",
+                "track_true",
+                "track_true_folded",
+                "0",
+                "[0,0]",
+                "rangeTable",
+                "readoutPad",
+                "-50",
+                "responseTable",
+                "runheader",
+                "[0,0.10000000000000001]",
+                "tpcGasProperty",
+                "0",
+                "1",
+                "100000",
+                "[-50,50]"
+            ]
+        },
+        {
+            "title": "art::TCatRecoilFinder",
+            "parameters": [
+                "InputCollection",
+                "OutputTransparency",
+                "Verbose",
+                "WaitTime"
+            ],
+            "values": [
+                "[atsum]",
+                "0",
+                "1",
+                "200000"
+            ]
+        },
+        {
+            "title": "art::TCatRefineRecoilClusterProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputCollection",
+                "OutputDistance",
+                "OutputLength",
+                "OutputTransparency",
+                "RequiredNumHits",
+                "Verbose"
+            ],
+            "values": [
+                "atroughrecoil",
+                "atrecoil",
+                "distance",
+                "length",
+                "0",
+                "3",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatRegionHitsDivider",
+            "parameters": [
+                "DebugMode",
+                "DetailDebugMode",
+                "EventHeader",
+                "InputCollection",
+                "LogFileName",
+                "LogFilePath",
+                "OutputBeamCollection",
+                "OutputRecoilCollection",
+                "OutputTransparency",
+                "RunHeadersName",
+                "SavePulse",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "0",
+                "eventheader",
+                "[atpulse]",
+                "regionhitsdivider.log",
+                "../log",
+                "atbeamcand",
+                "atrecoilcand",
+                "0",
+                "runheader",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatScalerMappingProcessor",
+            "parameters": [
+                "CatID",
+                "InputCollection",
+                "NumChannel",
+                "OutputCollectionDiff",
+                "OutputCollectionTotal",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "1",
+                "[catdata]",
+                "32",
+                "scadiff",
+                "scatot",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatSiCommonNoiseSubtractionProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "[siraw]",
+                "sirawsub",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatSiHitFindProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "[siped]",
+                "sihit",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatSiPedestalSubtractionProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "[sicomsub]",
+                "sisub",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatSumSampleProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Overwrite",
+                "Sparse",
+                "Verbose"
+            ],
+            "values": [
+                "[atrawsub]",
+                "atpulse",
+                "0",
+                "1",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatTPCRecoilCandidateRescanByDistanceProcessor",
+            "parameters": [
+                "BeamRegion",
+                "ClusterRadius",
+                "InputCandidateCollection",
+                "InputCollection",
+                "MinClusterSize",
+                "NameDeviation",
+                "NameInertia",
+                "NamePrincipalAxis",
+                "OutputCollection",
+                "OutputTransparency",
+                "ReadoutPad",
+                "Verbose"
+            ],
+            "values": [
+                "[-18,18]",
+                "[8.1000003814697266,21]",
+                "atrc",
+                "atpulse",
+                "5",
+                "deviation",
+                "inertia",
+                "principalAxis",
+                "atrc",
+                "0",
+                "readoutPad",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatTPCRecoilCandidateSelectProcessor",
+            "parameters": [
+                "BeamRegion",
+                "ClusterRadius",
+                "InputCollection",
+                "MinClusterSize",
+                "NameDeviation",
+                "NameInertia",
+                "NamePrincipalAxis",
+                "OutputCollection",
+                "OutputTransparency",
+                "ReadoutPad",
+                "Verbose"
+            ],
+            "values": [
+                "[-18,18]",
+                "[8.1000003814697266,21]",
+                "atpulse",
+                "5",
+                "deviation",
+                "inertia",
+                "principalAxis",
+                "atrc",
+                "0",
+                "readoutPad",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatTpcHitClusterProcessor",
+            "parameters": [
+                "ClusterRadius",
+                "DoTrackUpdate",
+                "IndependentVariable",
+                "InputCollection",
+                "IsSingle",
+                "MinClusterSize",
+                "MinHeight",
+                "Origin",
+                "OutputCollection",
+                "OutputTransparency",
+                "PulseLengthRange",
+                "ReadoutPad",
+                "SelectIf",
+                "SelectedRegion",
+                "TpcProperty",
+                "Verbose"
+            ],
+            "values": [
+                "[8.0999999999999996,21]",
+                "0",
+                "0",
+                "atpulse",
+                "1",
+                "5",
+                "0",
+                "[0,0,0]",
+                "atcluster",
+                "0",
+                "[0,100]",
+                "readoutPad",
+                "0",
+                "[0,0,0,0]",
+                "tpcGasProperty",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatTrackFittingWithSiliconProcessor",
+            "parameters": [
+                "ActiveArea",
+                "DefaultIntegrateStep",
+                "DisplacementTableXName",
+                "DisplacementTableZName",
+                "InputBeam",
+                "InputRecoil",
+                "InputSilicon",
+                "Output",
+                "OutputTransparency",
+                "RangeTable",
+                "ReadoutPad",
+                "ReadoutPlaneOffset",
+                "ResponseTableName",
+                "SigmaCoeff",
+                "TpcGasProp",
+                "UseDisplacement3D",
+                "Verbose"
+            ],
+            "values": [
+                "[0,0,0,0,0,0]",
+                "1",
+                "\"\"",
+                "\"\"",
+                "atbcls",
+                "atrcls",
+                "sihit",
+                "track",
+                "0",
+                "rangeTable",
+                "readoutPad",
+                "-50",
+                "responseTable",
+                "[0,0,0]",
+                "tpcGasProperty",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCatTrackResultDisplayProcessor",
+            "parameters": [
+                "DirNameFmt",
+                "DisplayMode",
+                "EventHeader",
+                "FileNameFmt",
+                "InputCollection",
+                "OutputTransparency",
+                "ReadoutPad",
+                "Verbose",
+                "WaitTime"
+            ],
+            "values": [
+                "figs/%s",
+                "0",
+                "eventheader",
+                "\"%s%04d_%05d.png\"",
+                "[track]",
+                "0",
+                "readoutPad",
+                "1",
+                "100000"
+            ]
+        },
+        {
+            "title": "art::TCatTrackingWithDiffusedChargeProcessor",
+            "parameters": [
+                "ActiveArea",
+                "DefaultIntegrateStep",
+                "DirNameFmt",
+                "DisplacementTableXName",
+                "DisplacementTableZName",
+                "DisplayMode",
+                "DoMeshSearch",
+                "DoPrepResTrack",
+                "EventHeader",
+                "FileNameFmt",
+                "FixedOrigin",
+                "IndependentVariable",
+                "InitialRange",
+                "InputCollection",
+                "MeshDim",
+                "MeshStep",
+                "MinuitMinType",
+                "NameCpuTime",
+                "Offset",
+                "OutputCollection",
+                "OutputTransparency",
+                "RangeTable",
+                "ReadoutPad",
+                "ReadoutPlaneOffset",
+                "ResTrack",
+                "ResponseTableName",
+                "SigmaCoeff",
+                "TpcGasProp",
+                "UseDisplacement3D",
+                "Verbose",
+                "WaitTime"
+            ],
+            "values": [
+                "[0,0,0,0,0,0]",
+                "1",
+                "figs/%s",
+                "\"\"",
+                "\"\"",
+                "0",
+                "0",
+                "0",
+                "eventheader",
+                "\"%s%04d_%05d.png\"",
+                "0",
+                "0",
+                "0",
+                "atpulse",
+                "[20,20,20]",
+                "[10,1,0.10000000000000001]",
+                "simplex",
+                "cputime",
+                "nan",
+                "track",
+                "0",
+                "rangeTable",
+                "readoutPad",
+                "-50",
+                "resTrack",
+                "responseTable",
+                "[0,1,0]",
+                "tpcGasProperty",
+                "0",
+                "1",
+                "100000"
+            ]
+        },
+        {
+            "title": "art::TChargeRiseTimeCompensateProcessor",
+            "parameters": [
+                "Coefficients",
+                "Input",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "[]",
+                "atpulse",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TChargeValidateProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputCollection",
+                "OutputInvalid",
+                "OutputTransparency",
+                "Range",
+                "Verbose"
+            ],
+            "values": [
+                "input",
+                "output",
+                "0",
+                "0",
+                "[0,0]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TChargeValidator",
+            "parameters": [
+                "ChargeRange",
+                "Input",
+                "Output",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "[0,0]",
+                "inputCharge",
+                "outputCharge",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCoinRegGateProcessor",
+            "parameters": [
+                "GateCoincidenceID",
+                "InputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "[0,1,2]",
+                "coin",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCoinRegMappingProcessor",
+            "parameters": [
+                "CatID",
+                "DetID",
+                "InputCollection",
+                "Mask",
+                "OutputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "1",
+                "0",
+                "catdata",
+                "65535",
+                "coin",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCoinRegUnGateProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputTransparency",
+                "UnGateCoincidenceID",
+                "Verbose"
+            ],
+            "values": [
+                "coin",
+                "0",
+                "[3]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TCounterEventStore",
+            "parameters": [
+                "MaxLoop",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "100",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TDataCalibrationProcessor",
+            "parameters": [
+                "ConverterArray",
+                "DataClass",
+                "DetectorIDOrigin",
+                "InputCollection",
+                "InputIsDigital",
+                "OutputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "no_conversion",
+                "ITiming",
+                "0",
+                "[data]",
+                "1",
+                "\"\"",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TDetectorGeometryUpdateProcessor",
+            "parameters": [
+                "Geometry",
+                "Input",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "geometry",
+                "inputData",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TEnergyCorrectionInMaterial",
+            "parameters": [
+                "Geometry",
+                "InputCharge",
+                "InputTrack",
+                "OutputCharge",
+                "OutputTransparency",
+                "OverrideDeadLayer",
+                "RangeTable",
+                "Verbose"
+            ],
+            "values": [
+                "geometry",
+                "inputCharge",
+                "inputTrack",
+                "outputCharge",
+                "0",
+                "-1",
+                "rangeTable",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TEventInfoGenerator",
+            "parameters": [
+                "EventHeaderName",
+                "OutputTransparency",
+                "RunHeaderName",
+                "RunName",
+                "RunNumber",
+                "Verbose"
+            ],
+            "values": [
+                "eventheader",
+                "0",
+                "runheader",
+                "run",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TEventNumberConditionProcessor",
+            "parameters": [
+                "Output",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "eventNumber",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TEventSkipProcessor",
+            "parameters": [
+                "MaxNumEvent",
+                "OutputTransparency",
+                "Start",
+                "Verbose"
+            ],
+            "values": [
+                "2147483647",
+                "0",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TExtractOutputProcessor",
+            "parameters": [
+                "InputCollection",
+                "InputID",
+                "Output",
+                "OutputCollections",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "inputname",
+                "0",
+                "extracted",
+                "[]",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TFormulaDataGenerator",
+            "parameters": [
+                "Definitions",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "[]",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TGainShiftCorrectionProcessor",
+            "parameters": [
+                "AxisY",
+                "DataType",
+                "DirName",
+                "DoCreate",
+                "EventHeaderName",
+                "EventNumberModulus",
+                "FileNamePrefix",
+                "Input",
+                "NumDet",
+                "OutputTransparency",
+                "RunHeaderName",
+                "Verbose"
+            ],
+            "values": [
+                "[]",
+                "0",
+                "prm/cat/gainshift",
+                "0",
+                "eventheader",
+                "10000",
+                "gainshift",
+                "atpulse",
+                "416",
+                "0",
+                "runheader",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TGateArrayInitializer",
+            "parameters": [
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TGateStopProcessor",
+            "parameters": [
+                "GateName",
+                "OutputTransparency",
+                "StopIf",
+                "Verbose"
+            ],
+            "values": [
+                "gate",
+                "0",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TGenerateParticleFromPID",
+            "parameters": [
+                "InputX",
+                "InputY",
+                "Output",
+                "OutputTransparency",
+                "PID2Particle",
+                "Verbose"
+            ],
+            "values": [
+                "aq",
+                "z",
+                "beam",
+                "0",
+                "[]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::THeaderTimestampProcessor",
+            "parameters": [
+                "Frequency",
+                "Input",
+                "Output",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "eventheader",
+                "timestamp",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::THitFinder",
+            "parameters": [
+                "AcceptableOffsetDifference",
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "ReadoutPad",
+                "Verbose"
+            ],
+            "values": [
+                "50",
+                "atpulse",
+                "athit",
+                "0",
+                "readoutPad",
+                "1"
+            ]
+        },
+        {
+            "title": "art::THogeProcessor",
+            "parameters": [
+                "NumRandom",
+                "OutputCollection",
+                "OutputTransparency",
+                "Random2",
+                "Verbose"
+            ],
+            "values": [
+                "numrandom",
+                "random",
+                "0",
+                "random2",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TMWDCCalibrationProcessor",
+            "parameters": [
+                "ChargeGate",
+                "Gate",
+                "InputCollection",
+                "OutputTransparency",
+                "TimingGate",
+                "UseMax",
+                "Verbose"
+            ],
+            "values": [
+                "[nan,nan]",
+                "default_gate",
+                "mwdc1_x",
+                "0",
+                "[0,10000]",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TMWDCDriftLengthCorrectionProcessor",
+            "parameters": [
+                "CellSize",
+                "InputPlane1",
+                "InputPlane2",
+                "InputTrack",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "9",
+                "dcx1_x1",
+                "dcx1_x2",
+                "dcx1",
+                "0",
+                "0"
+            ]
+        },
+        {
+            "title": "art::TMWDCPlaneDLCorrectionProcessor",
+            "parameters": [
+                "CellSize",
+                "ConverterList",
+                "InputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "9",
+                "[dldl]",
+                "dcx1_x1",
+                "0",
+                "0"
+            ]
+        },
+        {
+            "title": "art::TMWDCPlaneProcessor",
+            "parameters": [
+                "ConverterList",
+                "InputCollection",
+                "MWDCName",
+                "OutputTransparency",
+                "SortOrder",
+                "SortType",
+                "Verbose"
+            ],
+            "values": [
+                "[dtdx]",
+                "mwdc1_raw",
+                "mwdc1",
+                "0",
+                "1",
+                "2",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TMWDCTrackingProcessor",
+            "parameters": [
+                "ChargeGate",
+                "InputCollection",
+                "MaxSSR",
+                "OutputCollection",
+                "OutputTransparency",
+                "SignificanceLevel",
+                "TimingGate",
+                "UseAllCombination",
+                "UseLocalPos",
+                "Verbose"
+            ],
+            "values": [
+                "[-1000000,1000000]",
+                "[mwdc1_x,mwdc1_u,mwdc1_v]",
+                "10",
+                "mwdc1_track",
+                "0",
+                "0.05000000074505806",
+                "[-1000000,1000000]",
+                "0",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TMappingProcessor",
+            "parameters": [
+                "CategorizedData",
+                "InputCollection",
+                "MapConfig",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "catdata",
+                "[segdata]",
+                "mapper.conf",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TMergeTrackProcessor",
+            "parameters": [
+                "InputCollections",
+                "OutputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "[]",
+                "track",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TMissingMassProcessor",
+            "parameters": [
+                "OutputTransparency",
+                "Particle1",
+                "Particle2",
+                "Particle3",
+                "Particle4",
+                "Particle4CM",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "P1",
+                "P2",
+                "P3",
+                "P4",
+                "P4CM",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TMonitorMappingProcessor",
+            "parameters": [
+                "CatID",
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "1",
+                "[catdata]",
+                "at",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TMonotoneTableConverterGenerator",
+            "parameters": [
+                "OutputTransparency",
+                "ParameterList",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "[monotone_table_conversion,path/to/infile]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TMultiFileParameterArrayLoader",
+            "parameters": [
+                "FileList",
+                "Name",
+                "OutputTransparency",
+                "Type",
+                "Verbose"
+            ],
+            "values": [
+                "[path/to/file]",
+                "parameter",
+                "0",
+                "TParameterObject",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TNArrayLoader",
+            "parameters": [
+                "ArrayName",
+                "FileName",
+                "Output",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "table",
+                "path/to/rootfile",
+                "table",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TObjectLoader",
+            "parameters": [
+                "ObjectLists",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "[]",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TOutputTreeProcessor",
+            "parameters": [
+                "FileName",
+                "OutputTransparency",
+                "SplitLevel",
+                "TreeName",
+                "Verbose"
+            ],
+            "values": [
+                "temp.root",
+                "0",
+                "0",
+                "tree",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPIDGateProcessor",
+            "parameters": [
+                "ChargeArray",
+                "ChargeDetID",
+                "HistogramOption",
+                "OutputTransparency",
+                "Polygon",
+                "Rectangle",
+                "TimingArray",
+                "TimingDetID",
+                "Verbose"
+            ],
+            "values": [
+                "charge",
+                "0",
+                "[h_pid,h_pid;TOF;Charge,100,-10000.,10000.,100,-10000.,10000.]",
+                "0",
+                "[def_polygon,path/to/file]",
+                "[def_rectangle,0,0,1,1]",
+                "def_timingarray",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPIDwSinglePPACPlaneProcessor",
+            "parameters": [
+                "Brho0",
+                "Brho1",
+                "Brho2",
+                "DegThick",
+                "Dispersion",
+                "DoCheckTimestamp",
+                "Length",
+                "OutputAQ",
+                "OutputTransparency",
+                "OutputZ",
+                "PPACParam",
+                "PlaneName",
+                "TofName",
+                "Verbose"
+            ],
+            "values": [
+                "[0,0]",
+                "br35",
+                "br57",
+                "[]",
+                "[]",
+                "0",
+                "[23.283200000000001,23.283200000000001]",
+                "aq",
+                "0",
+                "z",
+                "f5geox",
+                "f5ppacx",
+                "tof37",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPIDwSinglePlaneProcessor",
+            "parameters": [
+                "Brho0",
+                "Brho1",
+                "Brho2",
+                "DegThick",
+                "Dispersion",
+                "Length",
+                "OutputAQ",
+                "OutputTransparency",
+                "OutputZ",
+                "PlaneName",
+                "TofName",
+                "Verbose"
+            ],
+            "values": [
+                "[0,0]",
+                "br35",
+                "br57",
+                "[]",
+                "[]",
+                "[23.283200000000001,23.283200000000001]",
+                "aq",
+                "0",
+                "z",
+                "dc51_x1",
+                "tof37",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPPACAnodeTimingProcessor",
+            "parameters": [
+                "Input",
+                "Output",
+                "OutputTransparency",
+                "ParameterFile",
+                "UseTSumGate",
+                "Verbose"
+            ],
+            "values": [
+                "[f7ppac1a,f7ppac1b,f7ppac2a,f7ppac2b]",
+                "f7ppac_t",
+                "0",
+                "path/to/file",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPPACProcessor",
+            "parameters": [
+                "CatID",
+                "ChargeConverterArray",
+                "DoSeparatePPACs",
+                "HasEachChConverter",
+                "InputCollection",
+                "ListOfPPACNames",
+                "ListOfParameterNames",
+                "OutputCollection",
+                "OutputTransparency",
+                "PPACParameter",
+                "TimingConverterArray",
+                "Verbose",
+                "XConverterArray",
+                "YConverterArray",
+                "doGeometryOffset",
+                "doInsideOffset",
+                "doOutsideOffset"
+            ],
+            "values": [
+                "1",
+                "ppac_qped",
+                "0",
+                "0",
+                "[catdata]",
+                "[]",
+                "[]",
+                "ppac",
+                "0",
+                "prm:ppac",
+                "ppac_ch2ns",
+                "1",
+                "ppac_xconv",
+                "ppac_yconv",
+                "1",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPPACProcessorQTC",
+            "parameters": [
+                "CatID",
+                "ChargeConverterArray",
+                "DoSeparatePPACs",
+                "HasEachChConverter",
+                "InputCollection",
+                "ListOfPPACNames",
+                "ListOfParameterNames",
+                "OutputCollection",
+                "OutputTransparency",
+                "PPACParameter",
+                "TimingConverterArray",
+                "Verbose",
+                "XConverterArray",
+                "YConverterArray",
+                "doGeometryOffset",
+                "doInsideOffset",
+                "doOutsideOffset"
+            ],
+            "values": [
+                "1",
+                "ppac_qped",
+                "0",
+                "0",
+                "[catdata]",
+                "[]",
+                "[]",
+                "ppac",
+                "0",
+                "prm:ppac",
+                "ppac_ch2ns",
+                "1",
+                "ppac_xconv",
+                "ppac_yconv",
+                "1",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPPACTrackingProcessor",
+            "parameters": [
+                "InputColName",
+                "OutputColName",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "[f3ppaca,f3ppacb]",
+                "f3",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TParameterArrayLoader",
+            "parameters": [
+                "FileFormat",
+                "FileName",
+                "Name",
+                "OutputTransparency",
+                "Type",
+                "Verbose"
+            ],
+            "values": [
+                "text",
+                "path/to/file",
+                "parameter",
+                "0",
+                "TParameterObject",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TParameterLoader",
+            "parameters": [
+                "FileName",
+                "Name",
+                "OutputTransparency",
+                "Type",
+                "Verbose"
+            ],
+            "values": [
+                "path/to/file",
+                "parameter",
+                "0",
+                "art::TParameterObject",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TParticleGenerateProcessor",
+            "parameters": [
+                "AtomicNumber",
+                "KineticEnergy",
+                "MassNumber",
+                "OutputTransparency",
+                "ParticleName",
+                "PhiRange",
+                "ThetaRange",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "particle",
+                "[0,0]",
+                "[0,0]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPolynomialConverterArrayGenerator",
+            "parameters": [
+                "OutputTransparency",
+                "ParameterList",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "[outputcolname,path/to/infile,1,2]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPolynomialConverterGenerator",
+            "parameters": [
+                "OutputTransparency",
+                "ParameterList",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "[outputname,path/to/infile,1,2]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TProcessor",
+            "parameters": [
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPulseFindTester",
+            "parameters": [
+                "AddFigFilePath",
+                "CanvasH",
+                "CanvasW",
+                "CanvasX",
+                "CanvasY",
+                "CutHighCharge",
+                "CutHighOffset",
+                "CutLowCharge",
+                "CutLowOffset",
+                "CutNegativeCharge",
+                "DebugMode",
+                "DetailDebugMode",
+                "DrawFigFlag",
+                "FallingThreshold",
+                "FigFilePath",
+                "GraphXmax",
+                "GraphXmin",
+                "GraphYmax",
+                "GraphYmin",
+                "HistSaveFlag",
+                "InputCollection",
+                "InputSigmaCollection",
+                "LogFileName",
+                "LogFilePath",
+                "MaxLength",
+                "OffsetRange",
+                "OutputCollection",
+                "OutputTransparency",
+                "PostPulse",
+                "PrePulse",
+                "RisingThreshold",
+                "RunHeadersName",
+                "SaveEvtNum",
+                "SaveFigFlag",
+                "SaveHitNum",
+                "SaveIDNum",
+                "SavePulse",
+                "Sparse",
+                "Verbose",
+                "WaitTime"
+            ],
+            "values": [
+                "./",
+                "1050",
+                "1000",
+                "0",
+                "0",
+                "1000000000",
+                "1000000000",
+                "-1000000000",
+                "-1000000000",
+                "0",
+                "0",
+                "0",
+                "0",
+                "10",
+                "./",
+                "100",
+                "0",
+                "100",
+                "-10",
+                "0",
+                "[at]",
+                "[]",
+                "pulsefindtester.log",
+                "../log",
+                "150",
+                "[-500,500]",
+                "atpulse",
+                "0",
+                "10",
+                "10",
+                "10",
+                "runheader",
+                "-1",
+                "0",
+                "-1",
+                "-1",
+                "0",
+                "0",
+                "1",
+                "200000"
+            ]
+        },
+        {
+            "title": "art::TPulseFinder",
+            "parameters": [
+                "ChargeRiseCompensation",
+                "ClockPeriod",
+                "DoKeepInvalid",
+                "FallingThreshold",
+                "GainShiftPrm",
+                "InputCollection",
+                "MaxLength",
+                "NumAvgPoints",
+                "NumSampleForBaseline",
+                "OffsetRange",
+                "OutputCollection",
+                "OutputTransparency",
+                "PostPulse",
+                "PrePulse",
+                "RisingThreshold",
+                "SavePulse",
+                "Sparse",
+                "Time2Drift",
+                "TpcGasProp",
+                "Verbose"
+            ],
+            "values": [
+                "[]",
+                "20",
+                "0",
+                "10",
+                "\"\"",
+                "[at]",
+                "150",
+                "5",
+                "10",
+                "[-10000,10000]",
+                "atpulse",
+                "0",
+                "10",
+                "10",
+                "10",
+                "0",
+                "0",
+                "0",
+                "tpcGasProperty",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPulseMovingAverageProcessor",
+            "parameters": [
+                "InputCollection",
+                "NumAverage",
+                "OutputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "icw",
+                "10",
+                "icwave",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPulsePoleZeroCancellationProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputTransparency",
+                "TimeConstantPZ",
+                "Verbose"
+            ],
+            "values": [
+                "atpulse",
+                "0",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPulseShapeTimestampProcessor",
+            "parameters": [
+                "Bits",
+                "FastFrequency",
+                "FastID",
+                "Input",
+                "MaxFastID",
+                "Output",
+                "OutputTransparency",
+                "ScalerInput",
+                "SlowFrequency",
+                "SlowID",
+                "Verbose"
+            ],
+            "values": [
+                "32",
+                "[]",
+                "-1",
+                "at_timestamp",
+                "0",
+                "timestamp",
+                "0",
+                "scaler",
+                "0",
+                "-1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPulseUnfoldHighPassProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputTransparency",
+                "TimeConstant",
+                "Verbose"
+            ],
+            "values": [
+                "[at]",
+                "0",
+                "0.80000001192092896",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPulseUnfoldHighPassTester",
+            "parameters": [
+                "DebugMode",
+                "DetailDebugMode",
+                "InputCollection",
+                "LogFileName",
+                "LogFilePath",
+                "OutputTransparency",
+                "RunHeadersName",
+                "TimeConstant",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "0",
+                "[at]",
+                "polezerotester.log",
+                "../log",
+                "0",
+                "runheader",
+                "0.80000001192092896",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPulseUnfoldLowPassProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputTransparency",
+                "TimeConstant",
+                "Verbose"
+            ],
+            "values": [
+                "[at]",
+                "0",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TRCNPEventStore_ts",
+            "parameters": [
+                "EventHeaderName",
+                "InputFiles",
+                "OutputTransparency",
+                "RunHeadersName",
+                "SHMID",
+                "SegmentedData",
+                "Verbose"
+            ],
+            "values": [
+                "eventheader",
+                "[]",
+                "0",
+                "runheader",
+                "0",
+                "segdata",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TRDFEventStore",
+            "parameters": [
+                "EventHeaderName",
+                "InputFiles",
+                "ModuleListName",
+                "OutputTransparency",
+                "RunHeadersName",
+                "SegmentInfoName",
+                "SegmentedData",
+                "Verbose"
+            ],
+            "values": [
+                "eventheader",
+                "[]",
+                "modlist",
+                "0",
+                "runheader",
+                "seglist",
+                "segdata",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TRIDFEventShifter",
+            "parameters": [
+                "EventHeaderName",
+                "InputFiles",
+                "OutputTransparency",
+                "ParameterDirList",
+                "RunHeadersName",
+                "SegmentedData",
+                "Verbose"
+            ],
+            "values": [
+                "eventheader",
+                "[]",
+                "0",
+                "[]",
+                "runheader",
+                "segdata",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TRIDFEventStore",
+            "parameters": [
+                "Asynchronous",
+                "EventHeaderName",
+                "EventListName",
+                "InputEventNumber",
+                "InputFiles",
+                "MaxEventNum",
+                "OutputEventNumber",
+                "OutputTransparency",
+                "RunHeadersName",
+                "SHMID",
+                "SegmentedData",
+                "Start",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "eventheader",
+                "\"\"",
+                "\"\"",
+                "[]",
+                "0",
+                "\"\"",
+                "0",
+                "runheader",
+                "0",
+                "segdata",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TRandomNumberEventStore",
+            "parameters": [
+                "Max",
+                "MaxLoop",
+                "Min",
+                "OutputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "1",
+                "100",
+                "0",
+                "random",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TRandomNumberProcessor",
+            "parameters": [
+                "InputColName",
+                "OutputColName",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "random",
+                "randommod",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TRandomTVDCClusterDataGenerator",
+            "parameters": [
+                "MaxID",
+                "Mode",
+                "MultiHit",
+                "OutputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "25",
+                "0",
+                "0",
+                "output",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TRangeTableConditionProcessor",
+            "parameters": [
+                "OutputTransparency",
+                "RangeTable",
+                "RangeTableFile",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "rangeTable",
+                "path/to/file",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TRawDataMappingProcessor",
+            "parameters": [
+                "CatID",
+                "DataType",
+                "Input",
+                "Output",
+                "OutputClass",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "0",
+                "catdata",
+                "odata",
+                "art::TRawDataObject",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TSRPPACCalibrationProcessor",
+            "parameters": [
+                "ChargeGate",
+                "Combination",
+                "Gate",
+                "InputCollection",
+                "OutputTransparency",
+                "TimingGate",
+                "UseMax",
+                "Verbose"
+            ],
+            "values": [
+                "[nan,nan]",
+                "0",
+                "default_gate",
+                "srppac_x",
+                "0",
+                "[0,10000]",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TSRPPACPlaneDqdxProcessor",
+            "parameters": [
+                "Combination",
+                "Converter",
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "SRPPACParameter",
+                "Verbose",
+                "center",
+                "detoffset",
+                "nStrip",
+                "stripWidth",
+                "turned",
+                "z"
+            ],
+            "values": [
+                "0",
+                "srppac_xc0",
+                "srppacx_cal",
+                "srppac",
+                "0",
+                "prm:srppac",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+            ]
+        },
+        {
+            "title": "art::TSRPPACPlaneProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "SRPPACParameter",
+                "Verbose",
+                "center",
+                "detoffset",
+                "nStrip",
+                "stripWidth",
+                "turned",
+                "z"
+            ],
+            "values": [
+                "srppacx_cal",
+                "srppac",
+                "0",
+                "prm:srppac",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+            ]
+        },
+        {
+            "title": "art::TSRPPACPlaneSideDqdxProcessor",
+            "parameters": [
+                "Combination",
+                "Converter1",
+                "Converter2",
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "SRPPACParameter",
+                "Verbose",
+                "center",
+                "detoffset",
+                "nStrip",
+                "stripWidth",
+                "turned",
+                "z"
+            ],
+            "values": [
+                "0",
+                "srppac_xcl",
+                "srppac_xcr",
+                "srppacx_cal",
+                "srppac",
+                "0",
+                "prm:srppac",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+            ]
+        },
+        {
+            "title": "art::TSampleCalibratorProcessor",
+            "parameters": [
+                "ADCConverterArrayName",
+                "InputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "\"\"",
+                "[at]",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TSampleCalibratorTester",
+            "parameters": [
+                "ADCConverterArrayName",
+                "DebugMode",
+                "DetailDebugMode",
+                "InputCollection",
+                "LogFileName",
+                "LogFilePath",
+                "OutputTransparency",
+                "RunHeadersName",
+                "Verbose"
+            ],
+            "values": [
+                "\"\"",
+                "0",
+                "0",
+                "[at]",
+                "samplecalibtester.log",
+                "../log",
+                "0",
+                "runheader",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TScalerMappingProcessor",
+            "parameters": [
+                "CatID",
+                "InputCollection",
+                "NumChannel",
+                "OutputCollectionDiff",
+                "OutputCollectionTotal",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "1",
+                "[catdata]",
+                "32",
+                "scadiff",
+                "scatot",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TScalerTimestampProcessor",
+            "parameters": [
+                "Bits",
+                "FastFrequency",
+                "FastID",
+                "Input",
+                "Output",
+                "OutputTransparency",
+                "SlowFrequency",
+                "SlowID",
+                "Verbose"
+            ],
+            "values": [
+                "32",
+                "0",
+                "-1",
+                "scaler",
+                "timestamp",
+                "0",
+                "0",
+                "-1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TSegmentCheckProcessor",
+            "parameters": [
+                "Ignore",
+                "ModuleList",
+                "OutputTransparency",
+                "SegmentList",
+                "SegmentedDataName",
+                "Verbose"
+            ],
+            "values": [
+                "[]",
+                "modlist",
+                "0",
+                "seglist",
+                "segdata",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TSeparateOutputProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputCollections",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "inputname",
+                "[]",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TSiliconEventGenerator",
+            "parameters": [
+                "Input",
+                "Output",
+                "OutputTransparency",
+                "PositionInfo",
+                "RangeTable",
+                "Threshold",
+                "Verbose"
+            ],
+            "values": [
+                "track",
+                "hits",
+                "0",
+                "sihit_true",
+                "rangeTableD",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TSimpleDataMappingProcessor",
+            "parameters": [
+                "CatID",
+                "DataTypeID",
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Sparse",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "0",
+                "catdata",
+                "simple",
+                "0",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TStreamingEventStore",
+            "parameters": [
+                "DefaultLength",
+                "EventHeaderName",
+                "FEMID",
+                "FEMType",
+                "FileName",
+                "IsStandAlone",
+                "MaxFrames",
+                "OutputTransparency",
+                "RunHeadersName",
+                "SegmentedData",
+                "StartFrame",
+                "Verbose"
+            ],
+            "values": [
+                "256",
+                "eventheader",
+                "0",
+                "2",
+                "[]",
+                "0",
+                "0",
+                "0",
+                "runheader",
+                "segdata",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimeReferenceProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputTransparency",
+                "RefConfig",
+                "SegConfig",
+                "Verbose"
+            ],
+            "values": [
+                "segdata",
+                "0",
+                "[0,0,0,0,0]",
+                "[0,0,0,0]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimeValidator",
+            "parameters": [
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "ValidTimeRange",
+                "Verbose"
+            ],
+            "values": [
+                "input",
+                "validated",
+                "0",
+                "[0,0,0]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimerProcessor",
+            "parameters": [
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimestampCalibrationProcessor",
+            "parameters": [
+                "Converter",
+                "Input",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "converter",
+                "input",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimestampEventReconstructor",
+            "parameters": [
+                "CombinationThreshold",
+                "DoUpdateOffset",
+                "EventLists",
+                "MaxAllCombination",
+                "OutputFileName",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "0.90000000000000002",
+                "0",
+                "[]",
+                "0",
+                "\"\"",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimestampValidator",
+            "parameters": [
+                "InputName",
+                "OutputName",
+                "OutputTransparency",
+                "ReferenceName",
+                "SearchWindow",
+                "Verbose"
+            ],
+            "values": [
+                "\"\"",
+                "\"\"",
+                "0",
+                "\"\"",
+                "[]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimingChargeCalibrationProcessor",
+            "parameters": [
+                "ChargeConverterArray",
+                "InputCollection",
+                "InputIsDigital",
+                "OutputCollection",
+                "OutputTransparency",
+                "TimingConverterArray",
+                "Verbose"
+            ],
+            "values": [
+                "no_conversion",
+                "plastic_raw",
+                "1",
+                "plastic",
+                "0",
+                "no_conversion",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimingChargeMappingProcessor",
+            "parameters": [
+                "CatID",
+                "ChargeType",
+                "ChargeTypeID",
+                "DoRequireBoth",
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Sparse",
+                "TimingTypeID",
+                "TrailingComesFirst",
+                "Verbose"
+            ],
+            "values": [
+                "21",
+                "0",
+                "2",
+                "1",
+                "catdata",
+                "plastic_raw",
+                "0",
+                "1",
+                "1",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimingChargePositionMappingProcessor",
+            "parameters": [
+                "CatID",
+                "ChargeType",
+                "ChargeTypeID",
+                "DoRequireBoth",
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "PositionInfo",
+                "Sparse",
+                "TimingTypeID",
+                "TrailingComesFirst",
+                "Verbose"
+            ],
+            "values": [
+                "21",
+                "0",
+                "2",
+                "1",
+                "catdata",
+                "output",
+                "0",
+                "glastPos",
+                "1",
+                "1",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimingChargeTriggeredListMappingProcessor",
+            "parameters": [
+                "CatID",
+                "ChargeType",
+                "ChargeTypeID",
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Sparse",
+                "TimingTypeID",
+                "TrailingComesFirst",
+                "Verbose"
+            ],
+            "values": [
+                "21",
+                "0",
+                "2",
+                "catdata",
+                "plastic_raw",
+                "0",
+                "1",
+                "1",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimingSubtractionProcessor",
+            "parameters": [
+                "InputCollection",
+                "MaxDetID",
+                "OutputCollection",
+                "OutputTransparency",
+                "StartTimingCollection",
+                "StartTimingDetID",
+                "UseMultipleStartTiming",
+                "UseStartAsTimestamp",
+                "ValidTimeRange",
+                "Verbose"
+            ],
+            "values": [
+                "plastic",
+                "512",
+                "plastic_tof",
+                "0",
+                "start_timing",
+                "1",
+                "0",
+                "1",
+                "[0,0,0]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimingTimestampAdapter",
+            "parameters": [
+                "InputName",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "input",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTpcEventGenerator",
+            "parameters": [
+                "ActiveArea",
+                "BeamRegion",
+                "DefaultIntegrateStep",
+                "DisplacementTableXName",
+                "DisplacementTableZName",
+                "Input",
+                "OutputPulses",
+                "OutputTrack",
+                "OutputTransparency",
+                "RangeTable",
+                "ReadoutPad",
+                "ReadoutPlaneOffset",
+                "ResponseTableName",
+                "SigmaCoeffFold",
+                "Threshold",
+                "TpcGasProp",
+                "UseDisplacement3D",
+                "Verbose"
+            ],
+            "values": [
+                "[0,0,0,0,0,0]",
+                "[0,0]",
+                "1",
+                "\"\"",
+                "\"\"",
+                "track_true",
+                "mcpulse",
+                "track_folded",
+                "0",
+                "rangeTable",
+                "readoutPad",
+                "-50",
+                "responseTable",
+                "[0,0,0]",
+                "0",
+                "tpcGasProperty",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTpcStaticGasPropertyConditionProcessor",
+            "parameters": [
+                "AttachCoeff",
+                "ConstLongDiff",
+                "ConstTransDiff",
+                "DriftVelocity",
+                "LongDiffCoeff",
+                "OutputTransparency",
+                "PropertyName",
+                "TransDiffCoeff",
+                "Verbose",
+                "WorkFunction"
+            ],
+            "values": [
+                "0",
+                "0.20000000000000001",
+                "0.40000000000000002",
+                "1",
+                "0.02",
+                "0",
+                "tpcGasProperty",
+                "0.040000000000000001",
+                "1",
+                "37"
+            ]
+        },
+        {
+            "title": "art::TTrackGenerator",
+            "parameters": [
+                "Input",
+                "Output",
+                "OutputTransparency",
+                "RangeTable",
+                "StartPointDistribution",
+                "Verbose"
+            ],
+            "values": [
+                "particle",
+                "track",
+                "0",
+                "rangeTable",
+                "[Gauss,Uniform,Uniform,0.,0.,0.,0.,0.,0.]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTrackXYGateProcessor",
+            "parameters": [
+                "Circle",
+                "HistogramOption",
+                "OutputTransparency",
+                "Polygon",
+                "Track",
+                "Verbose"
+            ],
+            "values": [
+                "[def_circle,0.,0.,1.]",
+                "[h_track,h_track;X;Y,100,-100.,100.,100,-100.,100.]",
+                "0",
+                "[def_polygon,path/to/file]",
+                "def_input",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTreeEventStore",
+            "parameters": [
+                "FileName",
+                "MaxEventNum",
+                "OutputTransparency",
+                "TreeName",
+                "Verbose"
+            ],
+            "values": [
+                "temp.root",
+                "0",
+                "0",
+                "tree",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTreeFormulaGateProcessor",
+            "parameters": [
+                "Definitions",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "[gatename;,branch.fVal,\">\",0]",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTreeProjectionProcessor",
+            "parameters": [
+                "FileName",
+                "Name",
+                "OutputFilename",
+                "OutputTransparency",
+                "Replace",
+                "Type",
+                "Verbose"
+            ],
+            "values": [
+                "path/to/file",
+                "parameter",
+                "\"\"",
+                "0",
+                "\"\"",
+                "art::TParameterObject",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTwoSidedPlasticCalibrationProcessor",
+            "parameters": [
+                "DetIDRange",
+                "InputCollection1",
+                "InputCollection2",
+                "OutputCollection",
+                "OutputTransparency",
+                "PositionConverterArray",
+                "QDiffType",
+                "ValidTimeRange",
+                "Verbose"
+            ],
+            "values": [
+                "[1,1]",
+                "plastic1",
+                "plastic2",
+                "plastic_cal",
+                "0",
+                "no_conversion",
+                "0",
+                "[0,0,0]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TUpdateParticleMomentumByBrho",
+            "parameters": [
+                "BrhoName",
+                "InputName",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "br57",
+                "particle",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TUpdateParticleMomentumByTable",
+            "parameters": [
+                "ConverterSet",
+                "InputName",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "[]",
+                "beam",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TUpdateParticleMomentumProcessor",
+            "parameters": [
+                "IgnoreRange",
+                "OutputTransparency",
+                "Particle",
+                "RangeTable",
+                "Track",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "0",
+                "particle",
+                "nameOfRangeTable",
+                "track",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TVDCClusterizationProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "SearchTimeWidth",
+                "Verbose",
+                "plane type"
+            ],
+            "values": [
+                "mwdc1_raw",
+                "mwdc1",
+                "0",
+                "200",
+                "1",
+                "0"
+            ]
+        },
+        {
+            "title": "art::TPIDGateProcessor",
+            "parameters": [
+                "ChargeArray",
+                "ChargeDetID",
+                "HistogramOption",
+                "OutputTransparency",
+                "Polygon",
+                "Rectangle",
+                "TimingArray",
+                "TimingDetID",
+                "Verbose"
+            ],
+            "values": [
+                "charge",
+                "0",
+                "[h_pid,h_pid;TOF;Charge,100,-10000.,10000.,100,-10000.,10000.]",
+                "0",
+                "[def_polygon,path/to/file]",
+                "[def_rectangle,0,0,1,1]",
+                "def_timingarray",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPIDwSinglePPACPlaneProcessor",
+            "parameters": [
+                "Brho0",
+                "Brho1",
+                "Brho2",
+                "DegThick",
+                "Dispersion",
+                "DoCheckTimestamp",
+                "Length",
+                "OutputAQ",
+                "OutputTransparency",
+                "OutputZ",
+                "PPACParam",
+                "PlaneName",
+                "TofName",
+                "Verbose"
+            ],
+            "values": [
+                "[0,0]",
+                "br35",
+                "br57",
+                "[]",
+                "[]",
+                "0",
+                "[23.283200000000001,23.283200000000001]",
+                "aq",
+                "0",
+                "z",
+                "f5geox",
+                "f5ppacx",
+                "tof37",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPIDwSinglePlaneProcessor",
+            "parameters": [
+                "Brho0",
+                "Brho1",
+                "Brho2",
+                "DegThick",
+                "Dispersion",
+                "Length",
+                "OutputAQ",
+                "OutputTransparency",
+                "OutputZ",
+                "PlaneName",
+                "TofName",
+                "Verbose"
+            ],
+            "values": [
+                "[0,0]",
+                "br35",
+                "br57",
+                "[]",
+                "[]",
+                "[23.283200000000001,23.283200000000001]",
+                "aq",
+                "0",
+                "z",
+                "dc51_x1",
+                "tof37",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPPACAnodeTimingProcessor",
+            "parameters": [
+                "Input",
+                "Output",
+                "OutputTransparency",
+                "ParameterFile",
+                "UseTSumGate",
+                "Verbose"
+            ],
+            "values": [
+                "[f7ppac1a,f7ppac1b,f7ppac2a,f7ppac2b]",
+                "f7ppac_t",
+                "0",
+                "path/to/file",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPPACProcessor",
+            "parameters": [
+                "CatID",
+                "ChargeConverterArray",
+                "DoSeparatePPACs",
+                "HasEachChConverter",
+                "InputCollection",
+                "ListOfPPACNames",
+                "ListOfParameterNames",
+                "OutputCollection",
+                "OutputTransparency",
+                "PPACParameter",
+                "TimingConverterArray",
+                "Verbose",
+                "XConverterArray",
+                "YConverterArray",
+                "doGeometryOffset",
+                "doInsideOffset",
+                "doOutsideOffset"
+            ],
+            "values": [
+                "1",
+                "ppac_qped",
+                "0",
+                "0",
+                "[catdata]",
+                "[]",
+                "[]",
+                "ppac",
+                "0",
+                "prm:ppac",
+                "ppac_ch2ns",
+                "1",
+                "ppac_xconv",
+                "ppac_yconv",
+                "1",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPPACProcessorQTC",
+            "parameters": [
+                "CatID",
+                "ChargeConverterArray",
+                "DoSeparatePPACs",
+                "HasEachChConverter",
+                "InputCollection",
+                "ListOfPPACNames",
+                "ListOfParameterNames",
+                "OutputCollection",
+                "OutputTransparency",
+                "PPACParameter",
+                "TimingConverterArray",
+                "Verbose",
+                "XConverterArray",
+                "YConverterArray",
+                "doGeometryOffset",
+                "doInsideOffset",
+                "doOutsideOffset"
+            ],
+            "values": [
+                "1",
+                "ppac_qped",
+                "0",
+                "0",
+                "[catdata]",
+                "[]",
+                "[]",
+                "ppac",
+                "0",
+                "prm:ppac",
+                "ppac_ch2ns",
+                "1",
+                "ppac_xconv",
+                "ppac_yconv",
+                "1",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPPACTrackingProcessor",
+            "parameters": [
+                "InputColName",
+                "OutputColName",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "[f3ppaca,f3ppacb]",
+                "f3",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TParameterArrayLoader",
+            "parameters": [
+                "FileFormat",
+                "FileName",
+                "Name",
+                "OutputTransparency",
+                "Type",
+                "Verbose"
+            ],
+            "values": [
+                "text",
+                "path/to/file",
+                "parameter",
+                "0",
+                "TParameterObject",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TParameterLoader",
+            "parameters": [
+                "FileName",
+                "Name",
+                "OutputTransparency",
+                "Type",
+                "Verbose"
+            ],
+            "values": [
+                "path/to/file",
+                "parameter",
+                "0",
+                "art::TParameterObject",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TParticleGenerateProcessor",
+            "parameters": [
+                "AtomicNumber",
+                "KineticEnergy",
+                "MassNumber",
+                "OutputTransparency",
+                "ParticleName",
+                "PhiRange",
+                "ThetaRange",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "particle",
+                "[0,0]",
+                "[0,0]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPolynomialConverterArrayGenerator",
+            "parameters": [
+                "OutputTransparency",
+                "ParameterList",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "[outputcolname,path/to/infile,1,2]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPolynomialConverterGenerator",
+            "parameters": [
+                "OutputTransparency",
+                "ParameterList",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "[outputname,path/to/infile,1,2]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TProcessor",
+            "parameters": [
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPulseFindTester",
+            "parameters": [
+                "AddFigFilePath",
+                "CanvasH",
+                "CanvasW",
+                "CanvasX",
+                "CanvasY",
+                "CutHighCharge",
+                "CutHighOffset",
+                "CutLowCharge",
+                "CutLowOffset",
+                "CutNegativeCharge",
+                "DebugMode",
+                "DetailDebugMode",
+                "DrawFigFlag",
+                "FallingThreshold",
+                "FigFilePath",
+                "GraphXmax",
+                "GraphXmin",
+                "GraphYmax",
+                "GraphYmin",
+                "HistSaveFlag",
+                "InputCollection",
+                "InputSigmaCollection",
+                "LogFileName",
+                "LogFilePath",
+                "MaxLength",
+                "OffsetRange",
+                "OutputCollection",
+                "OutputTransparency",
+                "PostPulse",
+                "PrePulse",
+                "RisingThreshold",
+                "RunHeadersName",
+                "SaveEvtNum",
+                "SaveFigFlag",
+                "SaveHitNum",
+                "SaveIDNum",
+                "SavePulse",
+                "Sparse",
+                "Verbose",
+                "WaitTime"
+            ],
+            "values": [
+                "./",
+                "1050",
+                "1000",
+                "0",
+                "0",
+                "1000000000",
+                "1000000000",
+                "-1000000000",
+                "-1000000000",
+                "0",
+                "0",
+                "0",
+                "0",
+                "10",
+                "./",
+                "100",
+                "0",
+                "100",
+                "-10",
+                "0",
+                "[at]",
+                "[]",
+                "pulsefindtester.log",
+                "../log",
+                "150",
+                "[-500,500]",
+                "atpulse",
+                "0",
+                "10",
+                "10",
+                "10",
+                "runheader",
+                "-1",
+                "0",
+                "-1",
+                "-1",
+                "0",
+                "0",
+                "1",
+                "200000"
+            ]
+        },
+        {
+            "title": "art::TPulseFinder",
+            "parameters": [
+                "ChargeRiseCompensation",
+                "ClockPeriod",
+                "DoKeepInvalid",
+                "FallingThreshold",
+                "GainShiftPrm",
+                "InputCollection",
+                "MaxLength",
+                "NumAvgPoints",
+                "NumSampleForBaseline",
+                "OffsetRange",
+                "OutputCollection",
+                "OutputTransparency",
+                "PostPulse",
+                "PrePulse",
+                "RisingThreshold",
+                "SavePulse",
+                "Sparse",
+                "Time2Drift",
+                "TpcGasProp",
+                "Verbose"
+            ],
+            "values": [
+                "[]",
+                "20",
+                "0",
+                "10",
+                "\"\"",
+                "[at]",
+                "150",
+                "5",
+                "10",
+                "[-10000,10000]",
+                "atpulse",
+                "0",
+                "10",
+                "10",
+                "10",
+                "0",
+                "0",
+                "0",
+                "tpcGasProperty",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPulseMovingAverageProcessor",
+            "parameters": [
+                "InputCollection",
+                "NumAverage",
+                "OutputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "icw",
+                "10",
+                "icwave",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPulsePoleZeroCancellationProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputTransparency",
+                "TimeConstantPZ",
+                "Verbose"
+            ],
+            "values": [
+                "atpulse",
+                "0",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPulseShapeTimestampProcessor",
+            "parameters": [
+                "Bits",
+                "FastFrequency",
+                "FastID",
+                "Input",
+                "MaxFastID",
+                "Output",
+                "OutputTransparency",
+                "ScalerInput",
+                "SlowFrequency",
+                "SlowID",
+                "Verbose"
+            ],
+            "values": [
+                "32",
+                "[]",
+                "-1",
+                "at_timestamp",
+                "0",
+                "timestamp",
+                "0",
+                "scaler",
+                "0",
+                "-1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPulseUnfoldHighPassProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputTransparency",
+                "TimeConstant",
+                "Verbose"
+            ],
+            "values": [
+                "[at]",
+                "0",
+                "0.80000001192092896",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPulseUnfoldHighPassTester",
+            "parameters": [
+                "DebugMode",
+                "DetailDebugMode",
+                "InputCollection",
+                "LogFileName",
+                "LogFilePath",
+                "OutputTransparency",
+                "RunHeadersName",
+                "TimeConstant",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "0",
+                "[at]",
+                "polezerotester.log",
+                "../log",
+                "0",
+                "runheader",
+                "0.80000001192092896",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TPulseUnfoldLowPassProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputTransparency",
+                "TimeConstant",
+                "Verbose"
+            ],
+            "values": [
+                "[at]",
+                "0",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TRCNPEventStore_ts",
+            "parameters": [
+                "EventHeaderName",
+                "InputFiles",
+                "OutputTransparency",
+                "RunHeadersName",
+                "SHMID",
+                "SegmentedData",
+                "Verbose"
+            ],
+            "values": [
+                "eventheader",
+                "[]",
+                "0",
+                "runheader",
+                "0",
+                "segdata",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TRDFEventStore",
+            "parameters": [
+                "EventHeaderName",
+                "InputFiles",
+                "ModuleListName",
+                "OutputTransparency",
+                "RunHeadersName",
+                "SegmentInfoName",
+                "SegmentedData",
+                "Verbose"
+            ],
+            "values": [
+                "eventheader",
+                "[]",
+                "modlist",
+                "0",
+                "runheader",
+                "seglist",
+                "segdata",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TRIDFEventShifter",
+            "parameters": [
+                "EventHeaderName",
+                "InputFiles",
+                "OutputTransparency",
+                "ParameterDirList",
+                "RunHeadersName",
+                "SegmentedData",
+                "Verbose"
+            ],
+            "values": [
+                "eventheader",
+                "[]",
+                "0",
+                "[]",
+                "runheader",
+                "segdata",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TRIDFEventStore",
+            "parameters": [
+                "Asynchronous",
+                "EventHeaderName",
+                "EventListName",
+                "InputEventNumber",
+                "InputFiles",
+                "MaxEventNum",
+                "OutputEventNumber",
+                "OutputTransparency",
+                "RunHeadersName",
+                "SHMID",
+                "SegmentedData",
+                "Start",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "eventheader",
+                "\"\"",
+                "\"\"",
+                "[]",
+                "0",
+                "\"\"",
+                "0",
+                "runheader",
+                "0",
+                "segdata",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TRandomNumberEventStore",
+            "parameters": [
+                "Max",
+                "MaxLoop",
+                "Min",
+                "OutputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "1",
+                "100",
+                "0",
+                "random",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TRandomNumberProcessor",
+            "parameters": [
+                "InputColName",
+                "OutputColName",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "random",
+                "randommod",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TRandomTVDCClusterDataGenerator",
+            "parameters": [
+                "MaxID",
+                "Mode",
+                "MultiHit",
+                "OutputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "25",
+                "0",
+                "0",
+                "output",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TRangeTableConditionProcessor",
+            "parameters": [
+                "OutputTransparency",
+                "RangeTable",
+                "RangeTableFile",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "rangeTable",
+                "path/to/file",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TRawDataMappingProcessor",
+            "parameters": [
+                "CatID",
+                "DataType",
+                "Input",
+                "Output",
+                "OutputClass",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "0",
+                "catdata",
+                "odata",
+                "art::TRawDataObject",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TSRPPACCalibrationProcessor",
+            "parameters": [
+                "ChargeGate",
+                "Combination",
+                "Gate",
+                "InputCollection",
+                "OutputTransparency",
+                "TimingGate",
+                "UseMax",
+                "Verbose"
+            ],
+            "values": [
+                "[nan,nan]",
+                "0",
+                "default_gate",
+                "srppac_x",
+                "0",
+                "[0,10000]",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TSRPPACPlaneDqdxProcessor",
+            "parameters": [
+                "Combination",
+                "Converter",
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "SRPPACParameter",
+                "Verbose",
+                "center",
+                "detoffset",
+                "nStrip",
+                "stripWidth",
+                "turned",
+                "z"
+            ],
+            "values": [
+                "0",
+                "srppac_xc0",
+                "srppacx_cal",
+                "srppac",
+                "0",
+                "prm:srppac",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+            ]
+        },
+        {
+            "title": "art::TSRPPACPlaneProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "SRPPACParameter",
+                "Verbose",
+                "center",
+                "detoffset",
+                "nStrip",
+                "stripWidth",
+                "turned",
+                "z"
+            ],
+            "values": [
+                "srppacx_cal",
+                "srppac",
+                "0",
+                "prm:srppac",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+            ]
+        },
+        {
+            "title": "art::TSRPPACPlaneSideDqdxProcessor",
+            "parameters": [
+                "Combination",
+                "Converter1",
+                "Converter2",
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "SRPPACParameter",
+                "Verbose",
+                "center",
+                "detoffset",
+                "nStrip",
+                "stripWidth",
+                "turned",
+                "z"
+            ],
+            "values": [
+                "0",
+                "srppac_xcl",
+                "srppac_xcr",
+                "srppacx_cal",
+                "srppac",
+                "0",
+                "prm:srppac",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+            ]
+        },
+        {
+            "title": "art::TSampleCalibratorProcessor",
+            "parameters": [
+                "ADCConverterArrayName",
+                "InputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "\"\"",
+                "[at]",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TSampleCalibratorTester",
+            "parameters": [
+                "ADCConverterArrayName",
+                "DebugMode",
+                "DetailDebugMode",
+                "InputCollection",
+                "LogFileName",
+                "LogFilePath",
+                "OutputTransparency",
+                "RunHeadersName",
+                "Verbose"
+            ],
+            "values": [
+                "\"\"",
+                "0",
+                "0",
+                "[at]",
+                "samplecalibtester.log",
+                "../log",
+                "0",
+                "runheader",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TScalerMappingProcessor",
+            "parameters": [
+                "CatID",
+                "InputCollection",
+                "NumChannel",
+                "OutputCollectionDiff",
+                "OutputCollectionTotal",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "1",
+                "[catdata]",
+                "32",
+                "scadiff",
+                "scatot",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TScalerTimestampProcessor",
+            "parameters": [
+                "Bits",
+                "FastFrequency",
+                "FastID",
+                "Input",
+                "Output",
+                "OutputTransparency",
+                "SlowFrequency",
+                "SlowID",
+                "Verbose"
+            ],
+            "values": [
+                "32",
+                "0",
+                "-1",
+                "scaler",
+                "timestamp",
+                "0",
+                "0",
+                "-1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TSegmentCheckProcessor",
+            "parameters": [
+                "Ignore",
+                "ModuleList",
+                "OutputTransparency",
+                "SegmentList",
+                "SegmentedDataName",
+                "Verbose"
+            ],
+            "values": [
+                "[]",
+                "modlist",
+                "0",
+                "seglist",
+                "segdata",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TSeparateOutputProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputCollections",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "inputname",
+                "[]",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TSiliconEventGenerator",
+            "parameters": [
+                "Input",
+                "Output",
+                "OutputTransparency",
+                "PositionInfo",
+                "RangeTable",
+                "Threshold",
+                "Verbose"
+            ],
+            "values": [
+                "track",
+                "hits",
+                "0",
+                "sihit_true",
+                "rangeTableD",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TSimpleDataMappingProcessor",
+            "parameters": [
+                "CatID",
+                "DataTypeID",
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Sparse",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "0",
+                "catdata",
+                "simple",
+                "0",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TStreamingEventStore",
+            "parameters": [
+                "DefaultLength",
+                "EventHeaderName",
+                "FEMID",
+                "FEMType",
+                "FileName",
+                "IsStandAlone",
+                "MaxFrames",
+                "OutputTransparency",
+                "RunHeadersName",
+                "SegmentedData",
+                "StartFrame",
+                "Verbose"
+            ],
+            "values": [
+                "256",
+                "eventheader",
+                "0",
+                "2",
+                "[]",
+                "0",
+                "0",
+                "0",
+                "runheader",
+                "segdata",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimeReferenceProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputTransparency",
+                "RefConfig",
+                "SegConfig",
+                "Verbose"
+            ],
+            "values": [
+                "segdata",
+                "0",
+                "[0,0,0,0,0]",
+                "[0,0,0,0]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimeValidator",
+            "parameters": [
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "ValidTimeRange",
+                "Verbose"
+            ],
+            "values": [
+                "input",
+                "validated",
+                "0",
+                "[0,0,0]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimerProcessor",
+            "parameters": [
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimestampCalibrationProcessor",
+            "parameters": [
+                "Converter",
+                "Input",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "converter",
+                "input",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimestampEventReconstructor",
+            "parameters": [
+                "CombinationThreshold",
+                "DoUpdateOffset",
+                "EventLists",
+                "MaxAllCombination",
+                "OutputFileName",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "0.90000000000000002",
+                "0",
+                "[]",
+                "0",
+                "\"\"",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimestampValidator",
+            "parameters": [
+                "InputName",
+                "OutputName",
+                "OutputTransparency",
+                "ReferenceName",
+                "SearchWindow",
+                "Verbose"
+            ],
+            "values": [
+                "\"\"",
+                "\"\"",
+                "0",
+                "\"\"",
+                "[]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimingChargeCalibrationProcessor",
+            "parameters": [
+                "ChargeConverterArray",
+                "InputCollection",
+                "InputIsDigital",
+                "OutputCollection",
+                "OutputTransparency",
+                "TimingConverterArray",
+                "Verbose"
+            ],
+            "values": [
+                "no_conversion",
+                "plastic_raw",
+                "1",
+                "plastic",
+                "0",
+                "no_conversion",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimingChargeMappingProcessor",
+            "parameters": [
+                "CatID",
+                "ChargeType",
+                "ChargeTypeID",
+                "DoRequireBoth",
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Sparse",
+                "TimingTypeID",
+                "TrailingComesFirst",
+                "Verbose"
+            ],
+            "values": [
+                "21",
+                "0",
+                "2",
+                "1",
+                "catdata",
+                "plastic_raw",
+                "0",
+                "1",
+                "1",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimingChargePositionMappingProcessor",
+            "parameters": [
+                "CatID",
+                "ChargeType",
+                "ChargeTypeID",
+                "DoRequireBoth",
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "PositionInfo",
+                "Sparse",
+                "TimingTypeID",
+                "TrailingComesFirst",
+                "Verbose"
+            ],
+            "values": [
+                "21",
+                "0",
+                "2",
+                "1",
+                "catdata",
+                "output",
+                "0",
+                "glastPos",
+                "1",
+                "1",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimingChargeTriggeredListMappingProcessor",
+            "parameters": [
+                "CatID",
+                "ChargeType",
+                "ChargeTypeID",
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Sparse",
+                "TimingTypeID",
+                "TrailingComesFirst",
+                "Verbose"
+            ],
+            "values": [
+                "21",
+                "0",
+                "2",
+                "catdata",
+                "plastic_raw",
+                "0",
+                "1",
+                "1",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimingSubtractionProcessor",
+            "parameters": [
+                "InputCollection",
+                "MaxDetID",
+                "OutputCollection",
+                "OutputTransparency",
+                "StartTimingCollection",
+                "StartTimingDetID",
+                "UseMultipleStartTiming",
+                "UseStartAsTimestamp",
+                "ValidTimeRange",
+                "Verbose"
+            ],
+            "values": [
+                "plastic",
+                "512",
+                "plastic_tof",
+                "0",
+                "start_timing",
+                "1",
+                "0",
+                "1",
+                "[0,0,0]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTimingTimestampAdapter",
+            "parameters": [
+                "InputName",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "input",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTpcEventGenerator",
+            "parameters": [
+                "ActiveArea",
+                "BeamRegion",
+                "DefaultIntegrateStep",
+                "DisplacementTableXName",
+                "DisplacementTableZName",
+                "Input",
+                "OutputPulses",
+                "OutputTrack",
+                "OutputTransparency",
+                "RangeTable",
+                "ReadoutPad",
+                "ReadoutPlaneOffset",
+                "ResponseTableName",
+                "SigmaCoeffFold",
+                "Threshold",
+                "TpcGasProp",
+                "UseDisplacement3D",
+                "Verbose"
+            ],
+            "values": [
+                "[0,0,0,0,0,0]",
+                "[0,0]",
+                "1",
+                "\"\"",
+                "\"\"",
+                "track_true",
+                "mcpulse",
+                "track_folded",
+                "0",
+                "rangeTable",
+                "readoutPad",
+                "-50",
+                "responseTable",
+                "[0,0,0]",
+                "0",
+                "tpcGasProperty",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTpcStaticGasPropertyConditionProcessor",
+            "parameters": [
+                "AttachCoeff",
+                "ConstLongDiff",
+                "ConstTransDiff",
+                "DriftVelocity",
+                "LongDiffCoeff",
+                "OutputTransparency",
+                "PropertyName",
+                "TransDiffCoeff",
+                "Verbose",
+                "WorkFunction"
+            ],
+            "values": [
+                "0",
+                "0.20000000000000001",
+                "0.40000000000000002",
+                "1",
+                "0.02",
+                "0",
+                "tpcGasProperty",
+                "0.040000000000000001",
+                "1",
+                "37"
+            ]
+        },
+        {
+            "title": "art::TTrackGenerator",
+            "parameters": [
+                "Input",
+                "Output",
+                "OutputTransparency",
+                "RangeTable",
+                "StartPointDistribution",
+                "Verbose"
+            ],
+            "values": [
+                "particle",
+                "track",
+                "0",
+                "rangeTable",
+                "[Gauss,Uniform,Uniform,0.,0.,0.,0.,0.,0.]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTrackXYGateProcessor",
+            "parameters": [
+                "Circle",
+                "HistogramOption",
+                "OutputTransparency",
+                "Polygon",
+                "Track",
+                "Verbose"
+            ],
+            "values": [
+                "[def_circle,0.,0.,1.]",
+                "[h_track,h_track;X;Y,100,-100.,100.,100,-100.,100.]",
+                "0",
+                "[def_polygon,path/to/file]",
+                "def_input",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTreeEventStore",
+            "parameters": [
+                "FileName",
+                "MaxEventNum",
+                "OutputTransparency",
+                "TreeName",
+                "Verbose"
+            ],
+            "values": [
+                "temp.root",
+                "0",
+                "0",
+                "tree",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTreeFormulaGateProcessor",
+            "parameters": [
+                "Definitions",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "[gatename;,branch.fVal,\">\",0]",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTreeProjectionProcessor",
+            "parameters": [
+                "FileName",
+                "Name",
+                "OutputFilename",
+                "OutputTransparency",
+                "Replace",
+                "Type",
+                "Verbose"
+            ],
+            "values": [
+                "path/to/file",
+                "parameter",
+                "\"\"",
+                "0",
+                "\"\"",
+                "art::TParameterObject",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TTwoSidedPlasticCalibrationProcessor",
+            "parameters": [
+                "DetIDRange",
+                "InputCollection1",
+                "InputCollection2",
+                "OutputCollection",
+                "OutputTransparency",
+                "PositionConverterArray",
+                "QDiffType",
+                "ValidTimeRange",
+                "Verbose"
+            ],
+            "values": [
+                "[1,1]",
+                "plastic1",
+                "plastic2",
+                "plastic_cal",
+                "0",
+                "no_conversion",
+                "0",
+                "[0,0,0]",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TUpdateParticleMomentumByBrho",
+            "parameters": [
+                "BrhoName",
+                "InputName",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "br57",
+                "particle",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TUpdateParticleMomentumByTable",
+            "parameters": [
+                "ConverterSet",
+                "InputName",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "[]",
+                "beam",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TUpdateParticleMomentumProcessor",
+            "parameters": [
+                "IgnoreRange",
+                "OutputTransparency",
+                "Particle",
+                "RangeTable",
+                "Track",
+                "Verbose"
+            ],
+            "values": [
+                "0",
+                "0",
+                "particle",
+                "nameOfRangeTable",
+                "track",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TVDCClusterizationProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "SearchTimeWidth",
+                "Verbose",
+                "plane type"
+            ],
+            "values": [
+                "mwdc1_raw",
+                "mwdc1",
+                "0",
+                "200",
+                "1",
+                "0"
+            ]
+        },
+        {
+            "title": "art::TVDCPlaneProcessor",
+            "parameters": [
+                "ConverterList",
+                "GR_OR_LAS",
+                "InputCollection",
+                "MAXDL",
+                "MWDCName",
+                "OutputTransparency",
+                "SortOrder",
+                "SortType",
+                "Verbose"
+            ],
+            "values": [
+                "[dtdx]",
+                "0",
+                "mwdc1_raw",
+                "10",
+                "mwdc1",
+                "0",
+                "0",
+                "2",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TVDCTrackingProcessor",
+            "parameters": [
+                "ChargeGate",
+                "InputCollection",
+                "MaxSSR",
+                "OutputCollection",
+                "OutputTransparency",
+                "SearchTimeWidth",
+                "SignificanceLevel",
+                "TiltedAngleY",
+                "TimingGate",
+                "UseAllCombination",
+                "UseLocalPos",
+                "Verbose"
+            ],
+            "values": [
+                "[-1000000,1000000]",
+                "[mwdc1_x,mwdc1_u,mwdc1_v]",
+                "10",
+                "mwdc1_track",
+                "0",
+                "10",
+                "0.05000000074505806",
+                "45",
+                "[-1000000,1000000]",
+                "0",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TVDCTrackingProcessor_gr",
+            "parameters": [
+                "InputCollection",
+                "InputCollection2",
+                "OutputCollection",
+                "OutputTransparency",
+                "SSRMax",
+                "TrackingMethod",
+                "UseLocalPos",
+                "Verbose"
+            ],
+            "values": [
+                "[mwdc1_x,mwdc1_u,mwdc1_v]",
+                "[mwdc1_x,mwdc1_u,mwdc1_v]",
+                "mwdc1_track",
+                "0",
+                "1000",
+                "0",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TVDCTrackingProcessor_las",
+            "parameters": [
+                "InputCollection",
+                "InputCollection2",
+                "OutputCollection",
+                "OutputTransparency",
+                "SSRMax",
+                "TrackingMethod",
+                "UseLocalPos",
+                "Verbose"
+            ],
+            "values": [
+                "[mwdc1_x,mwdc1_u,mwdc1_v]",
+                "[mwdc1_x,mwdc1_u,mwdc1_v]",
+                "mwdc1_track",
+                "0",
+                "1000",
+                "0",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::TWalkCorrectionProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Verbose",
+                "WalkConverterArray"
+            ],
+            "values": [
+                "input",
+                "output",
+                "0",
+                "1",
+                "conv:walk"
+            ]
+        },
+        {
+            "title": "art::ms1502::TPIDProcessor",
+            "parameters": [
+                "AtomicNumberNormalization",
+                "DegraderThickness",
+                "InputNameBeta1",
+                "InputNameBeta2",
+                "InputNameBrho1",
+                "InputNameBrho2",
+                "InputNameDF",
+                "OutputNameAQ35",
+                "OutputNameAQ57",
+                "OutputNameZdeg",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "1",
+                "[3.5,0.0030000000260770321]",
+                "beta35",
+                "beta57",
+                "brho35",
+                "brho57",
+                "f5",
+                "aq35",
+                "aq57",
+                "Zdeg",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::ribf113::TCatGlastPositionConditionProcessor",
+            "parameters": [
+                "DeadLayer",
+                "OffsetLeft",
+                "OffsetRight",
+                "OutputName",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "1.5",
+                "[-128.5,0,50]",
+                "[128.5,0,50]",
+                "glastPos",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::ribf113::TCatTrackFindWithSiliconProcessor",
+            "parameters": [
+                "Beam",
+                "MaxDistance",
+                "NumBinsPhi",
+                "NumBinsTheta",
+                "Output",
+                "OutputTrack",
+                "OutputTransparency",
+                "Recoil",
+                "Silicon",
+                "Verbose",
+                "readoutPad"
+            ],
+            "values": [
+                "atbcls",
+                "10",
+                "120",
+                "45",
+                "atrcand",
+                "atrclscand",
+                "0",
+                "atrpulse",
+                "sihits",
+                "1",
+                "readoutPad"
+            ]
+        },
+        {
+            "title": "art::sh04::TBeamZProcessor",
+            "parameters": [
+                "Averaging Method",
+                "Geometry",
+                "OutputCollection",
+                "OutputTransparency",
+                "TrackL",
+                "TrackR",
+                "Verbose"
+            ],
+            "values": [
+                "2",
+                "geometry",
+                "BeamZ",
+                "0",
+                "smwdc_l",
+                "smwdc_r",
+                "1"
+            ]
+        },
+        {
+            "title": "art::sh04::TNyokiChargeCorrectionProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Pedestal",
+                "TableFiles",
+                "Track",
+                "Verbose",
+                "YTableFiles"
+            ],
+            "values": [
+                "nyoki",
+                "nyoki_corrected",
+                "0",
+                "[0,0,0,0,0,0,0,0,0,0,0,0,0,0]",
+                "[path/to/file]",
+                "smwdc_s1",
+                "1",
+                "[path/to/file]"
+            ]
+        },
+        {
+            "title": "art::sh04::TNyokiGateProcessor",
+            "parameters": [
+                "ChargeGate",
+                "NyokiArray",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "[-10000,10000]",
+                "nyoki",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::sh04::TNyokiTimingProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Verbose"
+            ],
+            "values": [
+                "nyoki",
+                "nyoki_t",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::sh04::TP2PKinematicsProcessor",
+            "parameters": [
+                "BeamParameter",
+                "OutputCollection",
+                "OutputTransparency",
+                "PPAC",
+                "PPACDetID",
+                "RecoilL",
+                "RecoilR",
+                "ResidualFrame",
+                "Verbose"
+            ],
+            "values": [
+                "beam",
+                "kinematics",
+                "0",
+                "ppac",
+                "0",
+                "recoilL",
+                "recoilR",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::sh04::TReactionVertexProcessor",
+            "parameters": [
+                "Geometry",
+                "OutputCollection",
+                "OutputTransparency",
+                "S0Track",
+                "TrackL",
+                "TrackR",
+                "Verbose"
+            ],
+            "values": [
+                "geometry",
+                "vertex",
+                "0",
+                "s0_image",
+                "smwdc_l",
+                "smwdc_r",
+                "1"
+            ]
+        },
+        {
+            "title": "art::sh04::TRecoilProcessor",
+            "parameters": [
+                "AngleShift",
+                "BeamZ",
+                "Geometry",
+                "OutputCollection",
+                "OutputTransparency",
+                "S0Track",
+                "Side",
+                "TOFCollection",
+                "TableFile",
+                "TrackCollection",
+                "UseIncidentAngleCorrection",
+                "UsePolarizedMagnetCorrection",
+                "UseReactionPointCorrection",
+                "UseTable",
+                "Verbose",
+                "Vertex"
+            ],
+            "values": [
+                "0",
+                "0",
+                "geometry",
+                "recoil",
+                "0",
+                "s0track",
+                "0",
+                "tof",
+                "path/to/file",
+                "track",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1",
+                "vertex"
+            ]
+        },
+        {
+            "title": "art::sh04::TRecoilTOFProcessor",
+            "parameters": [
+                "BeamParameter",
+                "BeamZ",
+                "F3PlasticColName",
+                "F3PlasticDetID",
+                "FH9PlasticColName",
+                "FH9PlasticDetID",
+                "OutputL",
+                "OutputR",
+                "OutputS0D",
+                "OutputTransparency",
+                "S0DPlasticColName",
+                "S0DPlasticDetID",
+                "Shift",
+                "TPlasticColName",
+                "TPlasticLDetID",
+                "TPlasticRDetID",
+                "Verbose"
+            ],
+            "values": [
+                "beam",
+                "0",
+                "spla",
+                "0",
+                "spla",
+                "1",
+                "tofL",
+                "tofR",
+                "tofS0D",
+                "0",
+                "spla",
+                "1",
+                "0",
+                "tpla",
+                "0",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::sh04::TResidualPIDProcessor",
+            "parameters": [
+                "BeamParameter",
+                "ChargeCollection",
+                "Dispersion",
+                "FlightLengthOut",
+                "MWDCCollection",
+                "OutputTransparency",
+                "PIDOut",
+                "Parameter1",
+                "Parameter2",
+                "TOFCollection",
+                "Verbose"
+            ],
+            "values": [
+                "beam",
+                "nyoki_t",
+                "-1000",
+                "fl",
+                "mwdc",
+                "0",
+                "pid",
+                "1",
+                "0",
+                "tof",
+                "1"
+            ]
+        },
+        {
+            "title": "art::sh04::TS1PIDProcessor",
+            "parameters": [
+                "Nyoki",
+                "OutputTransparency",
+                "PIDOut",
+                "S0DTrack",
+                "S0Track",
+                "S1Track",
+                "S1TrackOut",
+                "TOF",
+                "TOFOut",
+                "Verbose"
+            ],
+            "values": [
+                "nyoki_z",
+                "0",
+                "pid_s1",
+                "s0d_image",
+                "s0_image",
+                "s1_image",
+                "s1_image_c",
+                "tof_s0s1",
+                "tof_c",
+                "1"
+            ]
+        },
+        {
+            "title": "art::sh04::TSMWDCDriftLengthCalibrator",
+            "parameters": [
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "PlaneData",
+                "Verbose"
+            ],
+            "values": [
+                "track",
+                "smwdc_x1_c",
+                "0",
+                "smwdc_x1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::sh04::TSMWDCTrackingProcessor",
+            "parameters": [
+                "AGate",
+                "BGate",
+                "ChargeGate",
+                "InputCollection",
+                "MAXSSR",
+                "NIteration",
+                "OutputCollection",
+                "OutputTransparency",
+                "SignificanceLevel",
+                "TimingGate",
+                "UseAllCombination",
+                "Verbose"
+            ],
+            "values": [
+                "[-1000000,1000000]",
+                "[-1000000,1000000]",
+                "[-1000000,1000000]",
+                "[smwdc_x1,smwdc_x2,smwdc_u1,smwdc_u2,smwdc_v1,smwdc_v2]",
+                "10",
+                "0",
+                "smwdc_track",
+                "0",
+                "0.05000000074505806",
+                "[-1000000,1000000]",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "title": "art::sh04::TSlewCorrectionProcessor",
+            "parameters": [
+                "ChargeCollection",
+                "ChargeDetID",
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "Parameter1b",
+                "Parameter1f",
+                "Parameter2b",
+                "Parameter2f",
+                "Verbose"
+            ],
+            "values": [
+                "plastic",
+                "0",
+                "tof",
+                "tof_corr",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "title": "art::sh04::TTrackProjectionProcessor",
+            "parameters": [
+                "InputCollection",
+                "OutputCollection",
+                "OutputTransparency",
+                "RotationCenterX",
+                "Theta",
+                "Verbose",
+                "Z"
+            ],
+            "values": [
+                "track",
+                "track_out",
+                "0",
+                "0",
+                "0",
+                "1",
+                "0"
+            ]
+        },
+        {
+            "title": "art::v1::TStreamingEventStore",
+            "parameters": [
+                "DefaultLength",
+                "EventHeaderName",
+                "FEMID",
+                "FEMType",
+                "FileName",
+                "IsStandAlone",
+                "MaxFrames",
+                "OutputTransparency",
+                "RunHeadersName",
+                "SegmentedData",
+                "StartFrame",
+                "Verbose"
+            ],
+            "values": [
+                "256",
+                "eventheader",
+                "0",
+                "2",
+                "[]",
+                "0",
+                "0",
+                "0",
+                "runheader",
+                "segdata",
+                "0",
+                "1"
+            ]
+        }
+    ]
+}
