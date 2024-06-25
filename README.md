@@ -4,6 +4,8 @@ BlenderのGeometry NodeのようにGUIでポチポチしてYAMLファイルを�
 
 B4など、ターミナルになれていない学生でも簡単にYAMLファイルを作れるようになる（抵抗感が少なくなる）ことを目指しています。
 
+ページ自身は[ここ](https://www.rcnp.osaka-u.ac.jp/~fendo/wiki/web/yaml-generator/index.html)。
+
 リポジトリの構造
 
 - **page-source** ソースコード置き場
