@@ -9,5 +9,5 @@ wheels/
 # venv
 .venv
 
-write_contents.sh
-content.txt
+page-source/write_contents.sh
+page-source/content.txt
