@@ -47,6 +47,7 @@ function addBlock(blockData) {
     const maxGlobalNameLength = 27; // タイトルの最大表示文字数
     const globalNameFrontLength = 12; // `GlobalName` の先頭表示文字数
     const globalNameBackLength = 12; // `GlobalName` の末尾表示文字数
+    const textLabelLength = 19;
         
     // GlobalName 表示のスタイル設定
     const globalNameFontSize = '12px'; // GlobalName の文字サイズ
@@ -153,7 +154,14 @@ function addBlock(blockData) {
 
         const leftLabel = document.createElement('label');
         leftLabel.className = 'node-label';
-        leftLabel.textContent = `${prmName}:`;
+        leftLabel.value = `${prmName}`;
+
+        if (prmName.length > textLabelLength) {
+            leftLabel.textContent = `${prmName.slice(0, textLabelLength-3)}...:`;
+        }else{
+            leftLabel.textContent = `${prmName}:`;
+        }
+
         leftLabel.style.left = '15px';
         leftLabel.style.top = `${topPosition}px`;
         leftLabel.style.position = 'absolute';
@@ -164,7 +172,7 @@ function addBlock(blockData) {
             const rect = leftLabel.getBoundingClientRect();
             const x = rect.left + window.scrollX;
             const y = rect.top + window.scrollY;
-            showPopup(blockData.title, globalName, prmName, inputBox.value, x, y);
+            showPopup(blockData.title, globalName, leftLabel.value, inputBox.value, x, y);
         });
 
         block.appendChild(leftNode);
