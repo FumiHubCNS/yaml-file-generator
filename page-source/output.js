@@ -153,7 +153,6 @@ function loadFromJSON(event) {
         const reader = new FileReader();
         reader.onload = function (e) {
             const data = JSON.parse(e.target.result);
-            clearAll();
 
             let maxGlobalId = 0;
 
@@ -203,6 +202,7 @@ function loadFromJSON(event) {
 
         reader.readAsText(file);
     }
+    event.target.value = null;
 }
 
 function createConnectionFromData(connectionData) {

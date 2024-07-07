@@ -1,8 +1,9 @@
 function clearAll() {
-
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
     blocks.forEach(block => block.remove());
+    blocks = [];
 
-    //blocks = [];
     blockCounter = 0;
     isDragging = false;
     selectedBlock = null;
@@ -18,8 +19,8 @@ function clearAll() {
     tableBody.innerHTML = '';
 
     const listContainer = document.getElementById('listContainer');
-    listContainer.innerHTML = ''; 
-
+    listContainer.innerHTML = '';
+    
     drawConnections();
 }
 
@@ -49,7 +50,11 @@ document.getElementById('searchData').addEventListener('click', searchAndShowRes
 document.getElementById('addButton').addEventListener('click', addAnchor);
 document.getElementById('saveImage').addEventListener('click', saveAsPNG);
 document.getElementById('saveData').addEventListener('click', saveAsJSON);
-document.getElementById('loadDataButton').addEventListener('click', () => document.getElementById('loadData').click());
+//document.getElementById('loadDataButton').addEventListener('click', () => document.getElementById('loadData').click());
+document.getElementById('loadDataButton').addEventListener('click', () => {
+    clearAll();
+    document.getElementById('loadData').click();
+});
 document.getElementById('loadData').addEventListener('change', loadFromJSON);
 document.getElementById('addJsonButton').addEventListener('click', () => {document.getElementById('addJsonInput').click();});
 document.getElementById('addJsonInput').addEventListener('change', addFromJSON);
