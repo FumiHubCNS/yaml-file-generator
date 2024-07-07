@@ -60,21 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedBlocks.clear();
     }
 
-    function addGroupInfoToTable(groupId, groupLabel, color) {
-        const tableBody = document.getElementById('groupInfoTable').querySelector('tbody');
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td class="group-color-cell" data-group-id="${groupId}" data-group-label="${groupLabel}" style="background-color: ${color};"></td>
-            <td><input type="text" class="editable" value="${groupId}" oninput="updateGroupId(this, '${groupId}')"></td>
-            <td><input type="text" class="editable" value="${groupLabel}" oninput="updateGroupLabel(this, '${groupId}')"></td>
-            <td><button onclick="toggleGroupColor('${groupId}', '${color}')">Check Color</button></td>
-            <td><button onclick="addToGroup('${groupId}')">Add to Group</button></td>
-            <td><button onclick="deleteGroup('${groupId}')">Delete Group</button></td>
-            <td><button onclick="showGroupParameters('${groupId}')">Parameters</button></td>
-        `;
-        tableBody.appendChild(row);
-    }
-
     function generateRandomRgbaColor(opacity) {
         const r = Math.floor(Math.random() * 256);
         const g = Math.floor(Math.random() * 256);
@@ -82,7 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return `rgba(${r}, ${g}, ${b}, ${opacity})`;
     }
 
-    window.toggleGroupColor = function(groupId, color) {
+    window.toggleGroupColor = function(groupId) {
+        const colorCell = document.querySelector(`.group-color-cell[data-group-id="${groupId}"]`);
+        color = colorCell.style.backgroundColor;
         const blocks = document.querySelectorAll(`[data-group-id="${groupId}"]`);
         blocks.forEach(block => {
             const blockId = block.id;
@@ -101,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.updateGroupId = function(inputElement, oldGroupId) {
         const newGroupId = inputElement.value;
         const blocks = document.querySelectorAll(`[data-group-id="${oldGroupId}"]`);
-        blocks.forEach(íblock => {
+        blocks.forEach(block => {
             block.dataset.groupId = newGroupId;
         });
         updateTableGroupId(oldGroupId, newGroupId);
@@ -291,6 +278,88 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+function generateRandomRgbaColor(opacity) {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+}
+
+// group.js
+
+// カラーパレットを表示して色を選択する関数
+function showColorPicker(groupId, initialColor) {
+    const initialRGBA = colorStringToRGBA(initialColor);
+    const [r, g, b, a] = initialRGBA;
+
+    // ポップアップを作成
+    const popup = document.createElement('div');
+    popup.classList.add('popup');
+    popup.style.top = '50%';
+    popup.style.left = '50%';
+    popup.style.transform = 'translate(-50%, -50%)';
+    popup.innerHTML = `
+        <h2>Pick a Color</h2>
+        <input type="color" id="colorPicker" value="${rgbToHex(r, g, b)}">
+        <label for="alphaRange">Alpha: <span id="alphaValue">${a}</span></label>
+        <input type="range" id="alphaRange" min="0" max="1" step="0.01" value="${a}">
+        <button id="saveColor">Save</button>
+        <button class="closePopup">Close</button>
+    `;
+
+    // カラーピッカーとアルファ値のイベントリスナーを設定
+    const colorPicker = popup.querySelector('#colorPicker');
+    const alphaRange = popup.querySelector('#alphaRange');
+    const alphaValue = popup.querySelector('#alphaValue');
+
+    alphaRange.addEventListener('input', () => {
+        alphaValue.textContent = alphaRange.value;
+    });
+
+    // 色を保存するイベント
+    popup.querySelector('#saveColor').addEventListener('click', () => {
+        const newColor = colorPicker.value;
+        const newAlpha = alphaRange.value;
+        const [r, g, b] = hexToRgb(newColor);
+        const rgbaColor = `rgba(${r}, ${g}, ${b}, ${newAlpha})`;
+        updateGroupColor(groupId, rgbaColor);
+        popup.remove();
+    });
+
+    // ポップアップを閉じるイベント
+    popup.querySelector('.closePopup').addEventListener('click', () => {
+        popup.remove();
+    });
+
+    document.body.appendChild(popup);
+}
+
+// グループの色を更新する関数
+function updateGroupColor(groupId, newColor) {
+    const blocks = document.querySelectorAll(`[data-group-id="${groupId}"]`);
+    blocks.forEach(block => {
+        block.style.backgroundColor = newColor;
+    });
+
+    // グループ情報テーブルの色も更新
+    const colorCell = document.querySelector(`.group-color-cell[data-group-id="${groupId}"]`);
+    if (colorCell) {
+        colorCell.style.backgroundColor = newColor;
+    }
+}
+
+// カラーピッカーイベントリスナーを設定
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.group-color-cell').forEach(cell => {
+        cell.addEventListener('click', () => {
+            const groupId = cell.dataset.groupId;
+            const currentColor = getComputedStyle(cell).backgroundColor;
+            showColorPicker(groupId, currentColor);
+        });
+    });
+});
+
+// 既存の `addGroupInfoToTable` 関数を修正してカラーピッカーイベントを追加
 function addGroupInfoToTable(groupId, groupLabel, color) {
     const tableBody = document.getElementById('groupInfoTable').querySelector('tbody');
     const row = document.createElement('tr');
@@ -299,18 +368,46 @@ function addGroupInfoToTable(groupId, groupLabel, color) {
     <td class="group-color-cell" data-group-id="${groupId}" data-group-label="${groupLabel}" style="background-color: ${color};"></td>
     <td><input type="text" class="editable" value="${groupId}" oninput="updateGroupId(this, '${groupId}')"></td>
     <td><input type="text" class="editable" value="${groupLabel}" oninput="updateGroupLabel(this, '${groupId}')"></td>
-    <td><button onclick="toggleGroupColor('${groupId}', '${color}')">Check Color</button></td>
+    <td><button onclick="toggleGroupColor('${groupId}')">Check Color</button></td>
     <td><button onclick="addToGroup('${groupId}')">Add to Group</button></td>
     <td><button onclick="deleteGroup('${groupId}')">Delete Group</button></td>
     <td><button onclick="showGroupParameters('${groupId}')">Parameters</button></td>
     `;
 
     tableBody.appendChild(row);
+
+    // 追加したカラーピッカーイベントリスナー
+    row.querySelector('.group-color-cell').addEventListener('click', () => {
+        showColorPicker(groupId, color);
+    });
 }
 
-function generateRandomRgbaColor(opacity) {
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
-    return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+// RGBA値を解析する関数
+function colorStringToRGBA(colorString) {
+    const rgba = colorString.match(/rgba?\((\d+), (\d+), (\d+)(?:, (\d+(?:\.\d+)?))?\)/);
+    if (rgba) {
+        return [
+            parseInt(rgba[1]),
+            parseInt(rgba[2]),
+            parseInt(rgba[3]),
+            parseFloat(rgba[4] || 1)
+        ];
+    }
+    return [0, 0, 0, 1];
+}
+
+// RGB値を16進数に変換する関数
+function rgbToHex(r, g, b) {
+    return `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`;
+}
+
+function componentToHex(c) {
+    const hex = c.toString(16);
+    return hex.length === 1 ? '0' + hex : hex;
+}
+
+// 16進数の色をRGBに変換する関数
+function hexToRgb(hex) {
+    const bigint = parseInt(hex.slice(1), 16);
+    return [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
 }
